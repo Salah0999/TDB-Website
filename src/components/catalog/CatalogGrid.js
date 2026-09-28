@@ -3,9 +3,8 @@
  * Clean filter toolbar with 3 tabs ("All Deals", "Beverages", "Chocolates") and product grid
  */
 
-import { renderProductCard } from './ProductCard.js';
 
-export function renderCatalogGrid(products, activeCategory = 'all', sortBy = 'featured', lang = 'en') {
+function renderCatalogGrid(products, activeCategory = 'all', sortBy = 'featured', lang = 'en') {
   const isAr = lang === 'ar';
   const renderCardFn = typeof renderProductCard === 'function' ? renderProductCard : window.renderProductCard;
 
@@ -62,7 +61,7 @@ export function renderCatalogGrid(products, activeCategory = 'all', sortBy = 'fe
       </div>
 
       <!-- Catalog Grid Output -->
-      <div id="catalogGrid" class="catalog-grid catalog-grid--two-category">
+      <div class="catalog-grid catalog-grid--two-category">
         ${productsHtml}
       </div>
     </div>

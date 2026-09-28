@@ -3,7 +3,7 @@
  * Clean multi-step checkout modal for 2-Category MVP
  */
 
-export function renderCheckoutModal(lang = 'en') {
+function renderCheckoutModal(lang = 'en') {
   const isAr = lang === 'ar';
 
   return `

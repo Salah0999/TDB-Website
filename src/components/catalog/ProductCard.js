@@ -3,7 +3,7 @@
  * High-converting wholesale product card with MOQ badge and quick actions
  */
 
-export function renderProductCard(product, lang = 'en') {
+function renderProductCard(product, lang = 'en') {
   const isAr = lang === 'ar';
   const name = isAr ? product.name_ar : product.name_en;
   const desc = isAr ? product.desc_ar : product.desc_en;

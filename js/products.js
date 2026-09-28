@@ -1,394 +1,117 @@
-// The Daily Basket (TDB) - Packaged Grocery, Pantry Staples & Wholesale Bundles
-const PRODUCTS_DATA = [
-  // ==========================================
-  // MEGA SAVINGS BASKETS / كرتونة التوفير
-  // ==========================================
-  {
-    id: "bundle-monthly-pantry",
-    category: "bundles",
-    name_en: "Monthly Pantry Mega Basket",
-    name_ar: "كرتونة الشهر الاقتصادية الكبيرة",
-    desc_en: "Complete monthly household supply: 5kg Egyptian rice, 5kg sugar, 4.5L pure cooking oil, 4 pasta packs, 3 tuna cans, 4 fava beans cans & tomato paste.",
-    desc_ar: "كرتونة مؤن البيت المتكاملة للشهر: شيكارة أرز ٥ كجم، سكر ٥ كجم، زيت ذرة نقي ٤.٥ لتر، ٤ أكياس مكرونة، ٣ تونة قطع، ٤ علب فول مدمس وصلصة طماطم مركزة.",
-    price: 38.50,
-    originalPrice: 49.00,
-    unit_en: "Family Box (15 Branded Items)",
-    unit_ar: "كرتونة توفير عائلية (١٥ منتج أصلي)",
-    badge_en: "Best Seller",
-    badge_ar: "الأكثر مبيعاً",
-    rating: 4.9,
-    reviewsCount: 620,
-    image: "https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=800&q=80",
-    distributor_en: "Authorized FMCG Brand Distributors",
-    distributor_ar: "وكلاء وموزعي الشركات الغذائية المعتمدين",
-    isSubscriptionAvailable: true,
-    contents_en: [
-      "1x Premium White Rice (5kg Bag)",
-      "1x Pure Crystal White Fine Sugar (5kg Bag)",
-      "1x Pure Cooking & Frying Oil (4.5L Bottle)",
-      "4x Durum Wheat Semolina Pasta Packs (400g each)",
-      "3x Solid White Meat Tuna in Sunflower Oil (185g cans)",
-      "4x Egyptian Recipe Fava Beans Cans (400g each)",
-      "2x Concentrated Tomato Paste Jars (375g each)",
-      "1x Fine Black Tea Box (250g)"
-    ],
-    contents_ar: [
-      "١ شيكارة أرز مصري فاخر حبة عريضة ٥ كجم",
-      "١ كيس سكر بلوري ناصع ٥ كجم",
-      "١ زجاجة زيت طهي وتحمير نقي ٤.٥ لتر",
-      "٤ أكياس مكرونة دقيق سيمولينا فاخر (٤٠٠ جم)",
-      "٣ علب تونة لحم أبيض قطعة واحدة في زيت نباتي (١٨٥ جم)",
-      "٤ علب فول مدمس بالخلطة المصرية (٤٠٠ جم)",
-      "٢ برطمان معجون طماطم مركز (٣٧٥ جم)",
-      "١ عبوة شاي أسود خرز فاخر ٢٥٠ جم"
-    ]
-  },
-  {
-    id: "bundle-breakfast-tea",
-    category: "bundles",
-    name_en: "Breakfast & Warm Drinks Crate",
-    name_ar: "كرتونة الإفطار والمشروبات الساخنة",
-    desc_en: "Essential morning beverages & spreads: Premium tea 250g, gold instant coffee 200g, 4 condensed milk cans, hazelnut spread, and tea biscuits box.",
-    desc_ar: "أساسيات فطار الصبح والمشروبات: شاي أسود ممتاز، نسكافيه جولد ٢٠٠ جم، ٤ علب حليب مكثف ومبخر، شوكولاتة بندق قابلة للدهن وعلبة بسكويت شاي عائلية.",
-    price: 26.00,
-    originalPrice: 33.50,
-    unit_en: "Breakfast Crate (8 Items)",
-    unit_ar: "كرتونة الإفطار (٨ منتجات أساسية)",
-    badge_en: "Top Value",
-    badge_ar: "قيمة ممتازة",
-    rating: 4.8,
-    reviewsCount: 310,
-    image: "https://images.unsplash.com/photo-1584473457406-6240486418e9?auto=format&fit=crop&w=800&q=80",
-    distributor_en: "Authorized FMCG Brand Distributors",
-    distributor_ar: "موزعي شركات الشاي والمشروبات المعتمدين",
-    isSubscriptionAvailable: true,
-    contents_en: [
-      "1x Premium Black Tea Box (250g)",
-      "1x Instant Freeze-Dried Gold Coffee (200g Glass Jar)",
-      "4x Evaporated Milk Cans for Tea (170g each)",
-      "1x Cocoa & Roasted Hazelnut Cream Jar (400g)",
-      "1x Butter Tea Biscuits Family Pack (12 individual packs)"
-    ],
-    contents_ar: [
-      "١ عبوة شاي أسود ممتاز ٢٥٠ جم",
-      "١ برطمان قهوة سريعة التحضير جولد ٢٠٠ جم",
-      "٤ علب حليب مبخر مخصص للشاي (١٧٠ جم)",
-      "١ برطمان كريمة كاكاو وبندق فاخرة ٤٠٠ جم",
-      "١ باكت بسكويت شاي بالزبدة (١٢ باكو مغلف)"
-    ]
-  },
-  {
-    id: "bundle-quick-meals",
-    category: "bundles",
-    name_en: "Quick Meals & Canned Essentials Box",
-    name_ar: "كرتونة الأكلات السريعة والمعلبات",
-    desc_en: "Grab-and-go pantry box: Instant noodles 10-pack, 4 tuna cans, 4 seasoned fava beans, sweet corn, and quick pasta sauces.",
-    desc_ar: "كرتونة الطوارئ والوجبات السريعة: باكت نودلز سريعة التحضير ١٠ قطع، ٤ علب تونة، ٤ علب فول مدمس متبل، ذرة حلوة وصلصة مكرونة جاهزة.",
-    price: 21.50,
-    originalPrice: 27.00,
-    unit_en: "Fast Meals Box (18 items)",
-    unit_ar: "كرتونة سريعة (١٨ صنف عملي)",
-    badge_en: "Quick Deal",
-    badge_ar: "عرض سريع",
-    rating: 4.9,
-    reviewsCount: 245,
-    image: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=800&q=80",
-    distributor_en: "Direct Manufacturer Supply",
-    distributor_ar: "توريد مباشر من مصانع الأغذية",
-    isSubscriptionAvailable: false,
-    contents_en: [
-      "10x Assorted Instant Flavor Noodles (70g each)",
-      "4x Solid Tuna Chunks in Sunflower Oil (140g cans)",
-      "4x Traditional Seasoned Fava Beans Cans (400g each)",
-      "2x Whole Kernel Golden Sweet Corn Cans (340g each)",
-      "2x Ready Italian Pasta Sauce Jars (350g each)"
-    ],
-    contents_ar: [
-      "١٠ أكياس نودلز سريعة التحضير بنكهات متنوعة",
-      "٤ علب تونة قطع لحم أبيض (١٤٠ جم)",
-      "٤ علب فول مدمس بخلطة الطحينة والكمون (٤٠٠ جم)",
-      "٢ علبة ذرة صفراء حب كامل (٣٤٠ جم)",
-      "٢ برطمان صوص مكرونة بالريحان والثوم (٣٥٠ جم)"
-    ]
-  },
+/**
+ * The Daily Basket (TDB) — Lean 2-Category MVP Product Data
+ * Browser-compatible vanilla JS data store.
+ * Categories: Beverages (Red Bull), Chocolates (Premium Pack)
+ */
 
-  // ==========================================
-  // PANTRY STAPLES / أساسيات البيت
-  // ==========================================
+// ============================================================
+// CATEGORIES
+// ============================================================
+const CATEGORIES_DATA = [
   {
-    id: "pantry-egyptian-rice",
-    category: "pantry",
-    name_en: "Premium Egyptian Rice (5kg Bag)",
-    name_ar: "أرز مصري فاخر حبة عريضة (شيكارة ٥ كجم)",
-    desc_en: "Top-grade double-polished Egyptian white rice. Naturally sorted, zero broken grain impurities, ideal for daily family meals.",
-    desc_ar: "أرز مصري أبيض درجة أولى حبة عريضة منقى ومغسول إلكترونياً. خالي تماماً من الشوائب والكسر، مثالي للطبخ اليومي.",
-    price: 7.80,
-    originalPrice: 9.50,
-    unit_en: "5kg Sealed Sack",
-    unit_ar: "شيكارة ٥ كجم محكمة الغلق",
-    badge_en: "Wholesale Price",
-    badge_ar: "سعر جملة",
-    rating: 5.0,
-    reviewsCount: 890,
-    image: "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=800&q=80",
-    distributor_en: "Authorized Rice Mills Distributor",
-    distributor_ar: "وكلاء مضارب الأرز المعتمدة",
-    isSubscriptionAvailable: false
+    id: 'beverages',
+    name_en: 'Beverages & Energy Drinks',
+    name_ar: 'المشروبات ومشروبات الطاقة',
+    tagline_en: 'Wholesale Energy Drink Cartons',
+    tagline_ar: 'كراتين مشروبات الطاقة بالجملة',
+    desc_en: 'Direct distributor supply of Red Bull energy drink cartons at genuine wholesale rates. Factory-sealed, 100% authentic.',
+    desc_ar: 'كراتين مشروب الطاقة ريد بُل بأسعار الجملة المباشرة من الموزع المعتمد. مغلقة من المصنع وأصلية ١٠٠٪.',
+    image: 'https://images.unsplash.com/photo-1622543925917-763c34d1a86e?auto=format&fit=crop&w=800&q=80',
+    itemCount: 1,
+    featuredProductId: 'red-bull-pack'
   },
   {
-    id: "pantry-cooking-oil",
-    category: "pantry",
-    name_en: "Pure Sunflower Cooking Oil (4.5L)",
-    name_ar: "زيت عباد شمس نقي للطهي والتحمير (٤.٥ لتر)",
-    desc_en: "100% pure refined sunflower oil, rich in Vitamin E. High smoke point for light, odorless frying and daily cooking.",
-    desc_ar: "زيت عباد شمس نقي ومكرر ١٠٠٪، غني بفيتامين هـ وبدون أي رائحة. مثالي للتحمير الصحي والطهي الخفيف.",
-    price: 11.20,
-    originalPrice: 13.80,
-    unit_en: "4.5L Economy Bottle",
-    unit_ar: "عبوة اقتصادية ٤.٥ لتر",
-    badge_en: "Family Size",
-    badge_ar: "حجم عائلي توفير",
-    rating: 4.9,
-    reviewsCount: 540,
-    image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=800&q=80",
-    distributor_en: "National Edible Oils Distributor",
-    distributor_ar: "موزع زيوت الطعام المعتمد",
-    isSubscriptionAvailable: false
-  },
-  {
-    id: "pantry-pasta-bundle",
-    category: "pantry",
-    name_en: "Durum Wheat Pasta Value Bundle (5x400g)",
-    name_ar: "عرض مكرونة سيمولينا فاخرة (٥ أكياس × ٤٠٠ جم)",
-    desc_en: "Multi-shape bundle: 2x Penne Rigate, 2x Spaghetti, 1x Fusilli. 100% golden durum semolina wheat.",
-    desc_ar: "عرض التوفير المشكل: ٢ كيس قلم، ٢ كيس سباغيتي، ١ كيس حلزوني. مصنوعة من سميد القمح القاسي عالي الجودة.",
-    price: 4.50,
-    originalPrice: 5.75,
-    unit_en: "Bundle of 5 Packs (2kg Total)",
-    unit_ar: "عرض ٥ أكياس (٢ كجم إجمالي)",
-    badge_en: "Best Value",
-    badge_ar: "أعلى توفير",
-    rating: 4.9,
-    reviewsCount: 420,
-    image: "https://images.unsplash.com/photo-1551462147-ff29053bfc14?auto=format&fit=crop&w=800&q=80",
-    distributor_en: "Direct Pasta Brand Distributor",
-    distributor_ar: "موزع شركات المكرونة مباشرة",
-    isSubscriptionAvailable: false
-  },
-  {
-    id: "pantry-sugar-bag",
-    category: "pantry",
-    name_en: "Fine Crystal White Sugar (5kg)",
-    name_ar: "سكر ناصع البياض حبيبات ناعمة (٥ كجم)",
-    desc_en: "Pure refined cane sugar, fast dissolving and sweet. Factory sealed 5kg family economy pack.",
-    desc_ar: "سكر قصب مكرر أبيض ناصع، سريع الذوبان ونقي تماماً. كيس عائلي اقتصادي ٥ كجم محكم الغلق.",
-    price: 6.90,
-    originalPrice: 8.20,
-    unit_en: "5kg Heavy Duty Bag",
-    unit_ar: "كيس عائلي ٥ كجم",
-    badge_en: "Wholesale Price",
-    badge_ar: "سعر جملة",
-    rating: 4.8,
-    reviewsCount: 380,
-    image: "https://images.unsplash.com/photo-1581441363689-1f3c3c414635?auto=format&fit=crop&w=800&q=80",
-    distributor_en: "Sugar Refining Co. Distributor",
-    distributor_ar: "وكيل مصانع تكرير السكر",
-    isSubscriptionAvailable: false
-  },
-  {
-    id: "pantry-pure-ghee",
-    category: "pantry",
-    name_en: "Traditional Pure Cow Ghee (700g Tin)",
-    name_ar: "سمن طبيعي بقري نقي (علبة ٧٠٠ جم)",
-    desc_en: "100% natural clarified cow butter ghee. Traditional rich aroma and granular golden texture for gourmet oriental dishes.",
-    desc_ar: "سمن بقري طبيعي نقي ١٠٠٪، ريحة بلدي أصيلة وقوام مرمل ذهبي. ممتاز للحلويات الشرقية والأكلات الفاخرة.",
-    price: 9.80,
-    originalPrice: 12.00,
-    unit_en: "700g Sealed Metal Tin",
-    unit_ar: "صفيحة محكمة ٧٠٠ جم",
-    badge_en: "100% Natural",
-    badge_ar: "طبيعي ١٠٠٪",
-    rating: 4.9,
-    reviewsCount: 290,
-    image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80",
-    distributor_en: "Certified Dairy Brands Distributor",
-    distributor_ar: "وكيل معتمد لشركات الألبان والسمن",
-    isSubscriptionAvailable: false
-  },
-
-  // ==========================================
-  // CANNED GOODS / معلبات ومؤن
-  // ==========================================
-  {
-    id: "canned-white-tuna",
-    category: "canned",
-    name_en: "Solid White Meat Tuna in Olive Oil (Pack of 4)",
-    name_ar: "تونة لحم أبيض قطعة واحدة بزيت الزيتون (عرض ٤ علب)",
-    desc_en: "Premium dolphin-safe albacore solid tuna packed in virgin olive oil. High protein, rich in Omega-3.",
-    desc_ar: "تونة لحم أبيض ممتازة قطعة واحدة متبلة ومحفوظة بزيت الزيتون البكر. غنية بالأوميجا ٣ والبروتين الصافي.",
-    price: 9.50,
-    originalPrice: 12.00,
-    unit_en: "Shrink Pack (4 x 185g cans)",
-    unit_ar: "شيرنك ٤ علب (١٨٥ جم للعلبة)",
-    badge_en: "Best Seller",
-    badge_ar: "الأكثر طلباً",
-    rating: 4.9,
-    reviewsCount: 512,
-    image: "https://images.unsplash.com/photo-1534483509719-3feaee7c30da?auto=format&fit=crop&w=800&q=80",
-    distributor_en: "Seafood Import Agency Distributor",
-    distributor_ar: "توكيل استيراد الأسماك المعلبة",
-    isSubscriptionAvailable: false
-  },
-  {
-    id: "canned-fava-beans",
-    category: "canned",
-    name_en: "Classic Egyptian Fava Beans (Pack of 6)",
-    name_ar: "فول مدمس مصري سادة وبالخلطة (عرض ٦ علب)",
-    desc_en: "Tender, ready-to-eat cooked fava beans. 3 plain fava cans and 3 tahini & cumin seasoned cans.",
-    desc_ar: "فول مدمس حبة طرية مستوية جاهزة للأكل. ٣ علب سادة فاخر و٣ علب بخلطة الطحينة والكمون والليمون.",
-    price: 4.80,
-    originalPrice: 6.00,
-    unit_en: "Bundle of 6 cans (400g each)",
-    unit_ar: "عرض ٦ علب (٤٠٠ جم للعلبة)",
-    badge_en: "Essential",
-    badge_ar: "أساسي للبيت",
-    rating: 4.8,
-    reviewsCount: 360,
-    image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80",
-    distributor_en: "Canned Foods Brand Distributor",
-    distributor_ar: "موزع شركات الصناعات الغذائية",
-    isSubscriptionAvailable: false
-  },
-  {
-    id: "canned-tomato-paste",
-    category: "canned",
-    name_en: "Concentrated Tomato Paste Jars (Pack of 6)",
-    name_ar: "معجون طماطم مركز برطمانات زجاج (عرض ٦ قطع)",
-    desc_en: "Rich deep red double-concentrated tomato puree, 28-30% concentration. No artificial colors or preservatives.",
-    desc_ar: "صلصة طماطم بيوريه مكررة تركيز ٢٨-٣٠٪ بلون أحمر طبيعي، خالية من المواد الحافظة والملونات الصناعية.",
-    price: 5.40,
-    originalPrice: 6.80,
-    unit_en: "Pack of 6 Glass Jars (375g each)",
-    unit_ar: "باكت ٦ برطمانات زجاج (٣٧٥ جم)",
-    badge_en: "Wholesale Value",
-    badge_ar: "سعر الجملة",
-    rating: 4.9,
-    reviewsCount: 280,
-    image: "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=800&q=80",
-    distributor_en: "National Canners Cooperative",
-    distributor_ar: "موزع معتمد لشركات الصلصة",
-    isSubscriptionAvailable: false
-  },
-
-  // ==========================================
-  // BEVERAGES & DRINKS / عصائر ومشروبات
-  // ==========================================
-  {
-    id: "bev-juice-carton",
-    category: "beverages",
-    name_en: "100% Pure Fruit Juice Cartons (Pack of 12 x 1L)",
-    name_ar: "كرتونة عصائر طبيعية مشكلة ١٠٠٪ (١٢ علبة × ١ لتر)",
-    desc_en: "Wholesale case: 4x Valencia Orange, 4x Apple Nectar, 4x Mango Nectar. No added sugar.",
-    desc_ar: "كرتونة الجملة: ٤ برتقال، ٤ تفاح بيور، ٤ مانجو مصري فاخر. بدون سكر مضاف وبدون مواد حافظة.",
-    price: 15.50,
-    originalPrice: 19.50,
-    unit_en: "Carton of 12 Liters",
-    unit_ar: "كرتونة كاملة ١٢ لتر",
-    badge_en: "Bulk Case",
-    badge_ar: "كرتونة جملة",
-    rating: 4.9,
-    reviewsCount: 410,
-    image: "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=800&q=80",
-    distributor_en: "Direct Juice Brand Distributor",
-    distributor_ar: "موزع شركات العصائر الكبرى",
-    isSubscriptionAvailable: false
-  },
-  {
-    id: "bev-soda-cans",
-    category: "beverages",
-    name_en: "Sparkling Soda Cans Shrink Pack (Pack of 24)",
-    name_ar: "شيرنك مياه غازية كانز أصلي (٢٤ كانز × ٣٣٠ مل)",
-    desc_en: "Direct distributor shrink pack of 24 cans. Refreshing, ice-cold carbonation at distributor wholesale cost.",
-    desc_ar: "شيرنك كامل ٢٤ كانز بسعر الجملة المباشر من مصنع المشروبات. انتعاش وتوفير للمناسبات والبيت.",
-    price: 12.80,
-    originalPrice: 16.00,
-    unit_en: "Wholesale Case of 24 Cans",
-    unit_ar: "شيرنك كرتونة ٢٤ كانز",
-    badge_en: "Party Size",
-    badge_ar: "توفير العزومات",
-    rating: 4.8,
-    reviewsCount: 650,
-    image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=800&q=80",
-    distributor_en: "Official Bottling Co. Distributor",
-    distributor_ar: "وكيل شركات التعبئة والمشروبات الغازية",
-    isSubscriptionAvailable: false
-  },
-  {
-    id: "bev-black-tea",
-    category: "beverages",
-    name_en: "Golden Leaf Black Tea Box (250g + 50 Bags Free)",
-    name_ar: "شاي أسود خرز فاخر (عبوة ٢٥٠ جم + ٥٠ فتلة مجاناً)",
-    desc_en: "Pure Ceylon selected black tea. Rich red brew and authentic full-bodied aroma for genuine tea lovers.",
-    desc_ar: "شاي سيلاني فاخر حبة كاملة منتقاة بعناية. لون أحمر كهرماني ومذاق مظبوط ومزاج عالي.",
-    price: 3.80,
-    originalPrice: 4.80,
-    unit_en: "250g Tin + 50 Free Teabags",
-    unit_ar: "عبوة ٢٥٠ جم + ٥٠ كيس مجاناً",
-    badge_en: "Bonus Pack",
-    badge_ar: "عرض التوفير",
-    rating: 5.0,
-    reviewsCount: 780,
-    image: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80",
-    distributor_en: "Direct Tea Importers Agency",
-    distributor_ar: "وكيل استيراد الشاي المعتمد",
-    isSubscriptionAvailable: false
-  },
-
-  // ==========================================
-  // SNACKS & CONFECTIONERY / بسكويت وشوكولاتة
-  // ==========================================
-  {
-    id: "snack-tea-biscuits",
-    category: "snacks",
-    name_en: "Morning Tea Biscuits Family Box (Pack of 12)",
-    name_ar: "علبة بسكويت شاي سادة عائلي (١٢ باكو مغلف)",
-    desc_en: "Golden crisp classic tea biscuits made with fresh butter and vanilla. Perfect for dipping with morning milk tea.",
-    desc_ar: "بسكويت شاي سادة مقرمش بالزبدة والفانيليا. خفيف ولذيذ مع كوباية الشاي بلبن الصبح ولأولادك في المدرسة.",
-    price: 3.50,
-    originalPrice: 4.50,
-    unit_en: "Box of 12 Packs (600g Total)",
-    unit_ar: "علبة كرتون ١٢ باكو (٦٠٠ جم)",
-    badge_en: "Family Choice",
-    badge_ar: "اختيار العيلة",
-    rating: 4.9,
-    reviewsCount: 390,
-    image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=800&q=80",
-    distributor_en: "Biscuits & Confectionery Brand Distributor",
-    distributor_ar: "موزع مصانع البسكويت والحلويات",
-    isSubscriptionAvailable: false
-  },
-  {
-    id: "snack-chocolate-wafer",
-    category: "snacks",
-    name_en: "Hazelnut Chocolate Wafer Bars (Pack of 24)",
-    name_ar: "علبة ويفر محشو كريمة البندق والشوكولاتة (٢٤ قطعة)",
-    desc_en: "Crispy layered wafers filled with rich roasted hazelnut cocoa cream and coated in milk chocolate.",
-    desc_ar: "ويفر مقرمش طبقات محشو كريمة الكاكاو والبندق ومغطى بشوكولاتة الحليب الفاخرة. علبة توفير ٢٤ قطعة.",
-    price: 6.20,
-    originalPrice: 7.80,
-    unit_en: "Display Box of 24 Bars",
-    unit_ar: "علبة توفير ٢٤ قطعة",
-    badge_en: "Snack Deal",
-    badge_ar: "عرض السناكس",
-    rating: 4.8,
-    reviewsCount: 315,
-    image: "https://images.unsplash.com/photo-1548848221-0c2e497ed557?auto=format&fit=crop&w=800&q=80",
-    distributor_en: "Confectionery Brands Agency",
-    distributor_ar: "توكيل الحلويات والشوكولاتة",
-    isSubscriptionAvailable: false
+    id: 'chocolates',
+    name_en: 'Chocolates & Confectionery',
+    name_ar: 'الشوكولاتة والحلويات الفاخرة',
+    tagline_en: 'Imported Chocolate Display Cartons',
+    tagline_ar: 'كراتين شوكولاتة مستوردة للعرض والجملة',
+    desc_en: 'Premium European chocolate display cartons for wholesale. Guaranteed freshness, temperature-controlled delivery.',
+    desc_ar: 'كراتين عرض شوكولاتة أوروبية فاخرة للجملة. مضمونة الصلاحية مع توصيل مبرد للحفاظ على الجودة.',
+    image: 'https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=800&q=80',
+    itemCount: 1,
+    featuredProductId: 'chocolate-pack'
   }
 ];
 
-if (typeof window !== "undefined") {
+// ============================================================
+// PRODUCTS — 2-Item MVP Catalog
+// ============================================================
+const PRODUCTS_DATA = [
+  {
+    id: 'red-bull-pack',
+    category: 'beverages',
+    name_en: 'Red Bull Energy Drink — Wholesale Carton',
+    name_ar: 'ريد بُل مشروب طاقة — كرتونة جملة أصلية',
+    desc_en: 'Original Red Bull Energy Drink wholesale carton direct from the authorized distributor. Factory shrink-wrapped, batch-traceable with QR code. Vitalizes body and mind — guaranteed 18+ month shelf life.',
+    desc_ar: 'كرتونة مشروب الطاقة الأصلي ريد بُل من الموزع المعتمد مباشرةً. مغلفة حرارياً من المصنع مع باركود دُفعة قابل للتتبع. تنشط الجسم والذهن — صلاحية مضمونة أكثر من ١٨ شهراً.',
+    price: 34.00,
+    originalPrice: 42.00,
+    unit_en: 'Wholesale Carton (24 Cans × 250ml)',
+    unit_ar: 'كرتونة جملة (٢٤ كانز × ٢٥٠ مل)',
+    moq: 1,
+    moqLabel_en: 'MOQ: 1 Carton (24 Cans)',
+    moqLabel_ar: 'الحد الأدنى: كرتونة واحدة (٢٤ كانز)',
+    badge_en: 'Wholesale Best Seller',
+    badge_ar: 'الأكثر طلباً بالجملة',
+    rating: 4.9,
+    reviewsCount: 428,
+    image: 'https://images.unsplash.com/photo-1622543925917-763c34d1a86e?auto=format&fit=crop&w=800&q=80',
+    distributor_en: 'Authorized Red Bull Beverage Distributor',
+    distributor_ar: 'موزع معتمد — وكيل رسمي لريد بُل',
+    inStock: true,
+    packageDetails_en: [
+      '24 Slim Cans × 250ml each',
+      'Factory shrink-wrapped distributor carton',
+      'Long shelf life guaranteed (18+ months)',
+      '100% Genuine batch with traceable tax QR code'
+    ],
+    packageDetails_ar: [
+      '٢٤ كانز سليم × ٢٥٠ مل للواحدة',
+      'كرتونة مغلفة حرارياً من المصنع الأصلي',
+      'صلاحية طويلة مضمونة (أكثر من ١٨ شهراً)',
+      'دُفعة أصلية ١٠٠٪ مع باركود وفاتورة معتمدة'
+    ]
+  },
+  {
+    id: 'chocolate-pack',
+    category: 'chocolates',
+    name_en: 'Premium Chocolate — Wholesale Display Carton',
+    name_ar: 'شوكولاتة فاخرة — كرتونة عرض جملة أصلية',
+    desc_en: 'Wholesale display carton of rich, velvety European premium chocolate bars. Crafted from sustainably sourced cocoa with a balanced sweetness and melt-in-mouth finish. Temperature-controlled delivery guaranteed.',
+    desc_ar: 'كرتونة عرض جملة من ألواح الشوكولاتة الأوروبية الفاخرة. مصنوعة من أجود حبوب الكاكاو، بمذاق غني يذوب في الفم، مع توصيل مبرد للحفاظ على الجودة.',
+    price: 28.50,
+    originalPrice: 36.00,
+    unit_en: 'Display Carton (12 Bars × 100g)',
+    unit_ar: 'كرتونة عرض (١٢ باكو × ١٠٠ جم)',
+    moq: 1,
+    moqLabel_en: 'MOQ: 1 Display Pack (12 Bars)',
+    moqLabel_ar: 'الحد الأدنى: كرتونة عرض (١٢ باكو)',
+    badge_en: 'Premium Confectionery',
+    badge_ar: 'حلويات فاخرة أصلية',
+    rating: 4.8,
+    reviewsCount: 316,
+    image: 'https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=800&q=80',
+    distributor_en: 'Direct Confectionery Brand Importer',
+    distributor_ar: 'مستورد شوكولاتة وحلويات مباشر',
+    inStock: true,
+    packageDetails_en: [
+      '12 Individual sealed bars × 100g each',
+      'Commercial wholesale counter display box',
+      'Stored in 18°C climate-controlled facility',
+      'Direct from official confectionery importer'
+    ],
+    packageDetails_ar: [
+      '١٢ لوح مغلف فردياً × ١٠٠ جم',
+      'كرتونة عرض مخصصة للبيع الفوري والجملة',
+      'محفوظة في درجات حرارة مثالية ١٨ مئوية',
+      'استيراد رسمي ومباشر من المصنع'
+    ]
+  }
+];
+
+// Expose globally for browser consumption
+if (typeof window !== 'undefined') {
   window.PRODUCTS_DATA = PRODUCTS_DATA;
+  window.CATEGORIES_DATA = CATEGORIES_DATA;
 }

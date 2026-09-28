@@ -3,7 +3,7 @@
  * High-converting slide-out cart drawer with subtotal, shipping bar, and checkout CTA
  */
 
-export function renderCartDrawer(cartItems, products, appliedPromo, lang = 'en', freeShippingThreshold = 45.0) {
+function renderCartDrawer(cartItems, products, appliedPromo, lang = 'en', freeShippingThreshold = 45.0) {
   const isAr = lang === 'ar';
   
   // Calculate Subtotal
