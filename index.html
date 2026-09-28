@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Daily Basket (TDB) | ما تحتاجه كل يوم | Wholesale Grocery & Pantry Staples Delivered</title>
-  <meta name="description" content="The Daily Basket (TDB) delivers your favorite grocery brands at wholesale prices direct from authorized distributors. Shop bulk pantry staples, rice, cooking oil, canned goods, and monthly family bundles." />
+  <title>The Daily Basket (TDB) | Wholesale Beverages & Premium Chocolates Delivered Direct</title>
+  <meta name="description" content="The Daily Basket (TDB) delivers genuine Red Bull energy drinks and premium chocolate cartons at direct distributor wholesale prices with low MOQ." />
 
   <!-- Google Fonts Preconnect & Fonts: Jost, EB Garamond, Amiri, Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,7 +23,7 @@
     <div class="container top-bar-inner">
       <div class="top-bar-notice">
         <span class="pulse-dot"></span>
-        <span data-i18n="topBarAnnouncement">Free Same-Day Delivery on bulk orders over $45</span>
+        <span data-i18n="topBarAnnouncement">Free Same-Day Delivery on wholesale orders over $45</span>
       </div>
       <div class="top-bar-cutoff">
         <span data-i18n="cutoffNotice">Wholesale distributor pricing direct to your door</span> · 
@@ -33,97 +33,13 @@
   </div>
 
   <!-- ==========================================================================
-       NAVIGATION HEADER
+       HEADER MOUNT (Rendered by src/components/common/Header.js)
        ========================================================================== -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <!-- Left: Brand Logo Lockup (Main Version) -->
-      <a href="#home" class="tdb-logo-lockup tdb-logo--main" aria-label="The Daily Basket Home">
-        <div class="tdb-monogram">TDB</div>
-        <div class="tdb-text tdb-text-group">
-          <span class="tdb-name tdb-brand-name">THE DAILY BASKET</span>
-          <span class="tdb-tag tdb-arabic-tagline">ما تحتاجه كل يوم</span>
-        </div>
-      </a>
-
-      <!-- Center: Navigation Links -->
-      <nav aria-label="Main Navigation">
-        <ul class="nav-links">
-          <li><a href="#home" class="nav-link active" data-i18n="navHome">Home</a></li>
-          <li><a href="#baskets" class="nav-link" data-i18n="navBaskets">Savings Baskets</a></li>
-          <li><a href="#catalog" class="nav-link" data-i18n="navPantry">Pantry Staples</a></li>
-          <li><a href="#catalog" class="nav-link" data-i18n="navCanned">Canned Goods</a></li>
-          <li><a href="#b2b" class="nav-link" data-i18n="navB2B">TDB for Business</a></li>
-          <li><a href="#how-it-works" class="nav-link" data-i18n="navHowItWorks">How It Works</a></li>
-        </ul>
-      </nav>
-
-      <!-- Right: Search, Language Switcher, Cart Trigger & Mobile Toggle -->
-      <div class="header-actions">
-        <!-- Interactive Search Bar -->
-        <div class="search-wrapper">
-          <div class="search-input-box">
-            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-            <input type="text" id="searchInput" class="search-input" placeholder="Search rice, oil, tuna, tea..." autocomplete="off" />
-          </div>
-          <!-- Live Autocomplete Dropdown -->
-          <div id="searchResultsDropdown" class="search-results-dropdown"></div>
-        </div>
-
-        <!-- Language Toggle Button (EN / AR) -->
-        <button id="langToggleBtn" class="lang-toggle-btn" aria-label="Switch Language">
-          <span>العربية</span>
-        </button>
-
-        <!-- Cart Trigger Button -->
-        <button id="cartTriggerBtn" class="cart-trigger-btn" aria-label="Open Shopping Cart">
-          <svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke-width="2">
-            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <path d="M16 10a4 4 0 0 1-8 0"></path>
-          </svg>
-          <span id="cartBadge" class="cart-counter-badge">0</span>
-        </button>
-
-        <!-- Mobile Nav Hamburger -->
-        <button id="mobileNavToggle" class="mobile-nav-toggle" aria-label="Open Menu">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Mobile Drawer Menu -->
-  <aside id="mobileDrawerNav" class="mobile-drawer-nav">
-    <div class="mobile-drawer-header">
-      <div class="tdb-logo-lockup tdb-logo--main">
-        <div class="tdb-monogram">TDB</div>
-        <div class="tdb-text tdb-text-group">
-          <span class="tdb-name tdb-brand-name">THE DAILY BASKET</span>
-        </div>
-      </div>
-      <button id="mobileDrawerClose" class="cart-close-btn" aria-label="Close Menu">✕</button>
-    </div>
-    <ul class="mobile-drawer-links">
-      <li><a href="#home" class="mobile-drawer-link" data-i18n="navHome" onclick="document.getElementById('mobileDrawerNav').classList.remove('active')">Home</a></li>
-      <li><a href="#baskets" class="mobile-drawer-link" data-i18n="navBaskets" onclick="document.getElementById('mobileDrawerNav').classList.remove('active')">Savings Baskets</a></li>
-      <li><a href="#catalog" class="mobile-drawer-link" data-i18n="navPantry" onclick="document.getElementById('mobileDrawerNav').classList.remove('active')">Pantry Staples</a></li>
-      <li><a href="#catalog" class="mobile-drawer-link" data-i18n="navCanned" onclick="document.getElementById('mobileDrawerNav').classList.remove('active')">Canned Goods</a></li>
-      <li><a href="#b2b" class="mobile-drawer-link" data-i18n="navB2B" onclick="document.getElementById('mobileDrawerNav').classList.remove('active')">TDB for Business</a></li>
-      <li><a href="#how-it-works" class="mobile-drawer-link" data-i18n="navHowItWorks" onclick="document.getElementById('mobileDrawerNav').classList.remove('active')">How It Works</a></li>
-    </ul>
-  </aside>
+  <div id="headerMount"></div>
 
   <main>
     <!-- ==========================================================================
-         HERO SECTION (2-Column Desktop Grid)
+         HERO SECTION (2-Category Wholesale MVP Focus)
          ========================================================================== -->
     <section id="home" class="hero-section">
       <!-- Glow Gradients -->
@@ -135,24 +51,24 @@
         <div class="hero-content-col">
           <div class="hero-badge-pill">
             <span class="pulse-dot"></span>
-            <span data-i18n="heroBadge">DIRECT DISTRIBUTOR • WHOLESALE SAVINGS</span>
+            <span data-i18n="heroBadge">DIRECT DISTRIBUTOR • WHOLESALE MVP</span>
           </div>
 
           <h1 class="hero-headline" data-i18n="heroHeadline">
-            Your Favorite Grocery Brands at Wholesale Prices, Delivered Home.
+            Wholesale Beverages & Premium Chocolates Delivered Direct.
           </h1>
 
           <p class="hero-subheadline" data-i18n="heroSubheadline">
-            Save big on pantry staples, packaged goods, beverages & monthly bundles delivered straight to your door.
+            Save big on energy drink cartons and premium chocolate packs sourced directly from authorized brand distributors.
           </p>
 
           <div class="hero-cta-group">
-            <a href="#baskets" class="btn-primary-cream" data-i18n="heroExploreBtn">
-              <span>Shop Wholesale Deals</span>
+            <a href="#catalog" class="btn-primary-cream" data-nav-category="beverages">
+              <span data-i18n="heroShopBeverages">Shop Beverages</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
             </a>
-            <a href="#b2b" class="btn-secondary-outline" data-i18n="heroB2BBtn">
-              <span>TDB for Business</span>
+            <a href="#catalog" class="btn-secondary-outline" data-nav-category="chocolates">
+              <span data-i18n="heroShopChocolates">Shop Chocolates</span>
             </a>
           </div>
 
@@ -160,7 +76,7 @@
           <div class="hero-trust-metrics">
             <div class="trust-metric-item">
               <span class="trust-metric-number">4.9 ★</span>
-              <span class="trust-metric-label" data-i18n="ratingHomes">from 8,500+ happy households</span>
+              <span class="trust-metric-label" data-i18n="ratingHomes">from 8,500+ happy households & cafes</span>
             </div>
             <div class="trust-metric-item">
               <span class="trust-metric-number" data-i18n="savingsStat">Save up to 30%</span>
@@ -173,12 +89,12 @@
           </div>
         </div>
 
-        <!-- Hero Right Column: High-Quality Packaged Grocery Showcase Card -->
+        <!-- Hero Right Column: Featured Red Bull Energy Drink Carton Showcase -->
         <div class="hero-card-showcase">
           <div class="hero-featured-card">
             <div class="hero-image-wrap">
-              <span class="hero-card-badge" data-i18n="boxPreviewTitle">Monthly Savings Crate</span>
-              <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=800&q=80" alt="Monthly Bulk Savings Crate" />
+              <span class="hero-card-badge" data-i18n="boxPreviewTitle">Featured Beverage Carton</span>
+              <img src="https://images.unsplash.com/photo-1622543925917-763c34d1a86e?auto=format&fit=crop&w=800&q=80" alt="Red Bull Energy Drink Carton" />
               <div class="floating-freshness-pill">
                 <span class="pulse-dot"></span>
                 <span data-i18n="boxFreshness">Guaranteed 100% Original</span>
@@ -187,17 +103,26 @@
 
             <div class="hero-card-header">
               <div>
-                <h2 class="hero-card-title">Monthly Pantry Mega Basket</h2>
-                <div style="font-size: 0.78rem; color: var(--tdb-border); margin-top: 0.2rem;">Authorized FMCG Brand Distributors</div>
+                <h2 class="hero-card-title">Red Bull Energy Drink (Pack/Carton)</h2>
+                <div style="font-size: 0.78rem; color: var(--tdb-border); margin-top: 0.2rem;">Authorized Red Bull Beverage Distributor</div>
               </div>
-              <div class="hero-card-price">$38.50</div>
+              <div class="hero-card-price">$34.00</div>
+            </div>
+
+            <!-- Wholesale MOQ Indicator -->
+            <div class="wholesale-moq-pill" style="margin-bottom: 0.85rem;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+              <span>MOQ: 1 Carton (24 Cans × 250ml)</span>
             </div>
 
             <p class="hero-card-details" data-i18n="boxIncluded">
-              Includes 15 essential items: 5kg Egyptian rice, 5kg sugar, 4.5L cooking oil, 4 pasta packs, solid tuna, fava beans, and tea.
+              24 Slim Cans × 250ml Sealed Carton. Genuine factory packaging with verified batch barcode.
             </p>
 
-            <button class="hero-card-quick-add" onclick="window.tdbApp.addToCart('bundle-monthly-pantry')">
+            <button class="hero-card-quick-add" onclick="window.tdbApp.addToCart('red-bull-pack')">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
               <span data-i18n="addToBasket">Add to Basket</span>
             </button>
@@ -245,8 +170,8 @@
                 <circle cx="18.5" cy="18.5" r="2.5"></circle>
               </svg>
             </div>
-            <h3 class="vp-title" data-i18n="vpDeliveryTitle">Fast Local Delivery</h3>
-            <p class="vp-desc" data-i18n="vpDeliveryDesc">Chilled vans bringing heavy bulk boxes and crates right up to your doorstep without supermarket hassle.</p>
+            <h3 class="vp-title" data-i18n="vpDeliveryTitle">Chilled Local Delivery</h3>
+            <p class="vp-desc" data-i18n="vpDeliveryDesc">Temperature-controlled vans bringing heavy beverage cartons and chocolate boxes right to your doorstep.</p>
           </div>
 
           <!-- Pillar 4 -->
@@ -256,298 +181,63 @@
                 <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
               </svg>
             </div>
-            <h3 class="vp-title" data-i18n="vpBulkTitle">Bulk Family Savings</h3>
-            <p class="vp-desc" data-i18n="vpBulkDesc">Curated monthly pantry crates and multipacks designed to maximize family budgets and monthly grocery savings.</p>
+            <h3 class="vp-title" data-i18n="vpBulkTitle">Low Wholesale MOQ</h3>
+            <p class="vp-desc" data-i18n="vpBulkDesc">Enjoy wholesale carton pricing with accessible 1-pack minimum order quantities for families and small shops.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ==========================================================================
-         MEGA SAVINGS BASKETS SECTION
+         HOMEPAGE & CATALOG FOCUS: THE 2-CATEGORY SPOTLIGHT (Requirement 3)
+         Immediately visible upon loading:
+         Category 1: Beverages & Canned Products (Featured: Red Bull Pack)
+         Category 2: Chocolates & Confectionery (Featured: Premium Chocolate Pack)
          ========================================================================== -->
-    <section id="baskets" class="baskets-section">
+    <section id="categories" class="category-spotlight-section">
       <div class="container">
         <div class="section-header">
-          <span class="section-eyebrow" data-i18n="heroBadge">WHOLESALE BUNDLES</span>
-          <h2 class="section-title" data-i18n="basketsSectionTitle">Monthly Bulk Savings Crates</h2>
-          <p class="section-subtitle" data-i18n="basketsSectionSubtitle">
-            Curated pantry bundles packed with high-demand essentials at unbeatable distributor bulk discounts.
+          <span class="section-eyebrow" data-i18n="taglineArabic">ما تحتاجه كل يوم</span>
+          <h2 class="section-title" data-i18n="categoryShowcaseTitle">Featured Wholesale Categories</h2>
+          <p class="section-subtitle" data-i18n="categoryShowcaseSubtitle">
+            Select a category to view distributor pricing, packaging specs, and bulk discounts.
           </p>
         </div>
 
-        <!-- Rendered by js/app.js -->
-        <div id="featuredBasketsGrid" class="baskets-grid"></div>
+        <!-- Rendered by src/components/catalog/CategoryCard.js -->
+        <div id="categorySpotlightGrid" class="category-spotlight-grid"></div>
       </div>
     </section>
 
     <!-- ==========================================================================
-         PRODUCT CATALOG & WHOLESALE PACKAGED GOODS
+         PRODUCT CATALOG (Requirement 3: Tabs "All", "Beverages", "Chocolates")
+         Rendered by src/components/catalog/CatalogGrid.js & ProductCard.js
          ========================================================================== -->
     <section id="catalog" class="catalog-section">
       <div class="container">
         <div class="section-header">
-          <span class="section-eyebrow" data-i18n="taglineArabic">ما تحتاجه كل يوم</span>
-          <h2 class="section-title" data-i18n="catalogTitle">Wholesale Grocery & Packaged Goods</h2>
+          <span class="section-eyebrow" data-i18n="heroBadge">WHOLESALE MVP CATALOG</span>
+          <h2 class="section-title" data-i18n="catalogTitle">Wholesale Product Catalog</h2>
           <p class="section-subtitle" data-i18n="catalogSubtitle">
-            Order individual cartons, bulk sacks, and distributor multipacks directly for your home pantry.
+            Order sealed manufacturer packs and wholesale display cartons with transparent MOQ.
           </p>
         </div>
 
-        <!-- Catalog Filter Toolbar -->
-        <div class="catalog-toolbar">
-          <ul class="filter-pills-list">
-            <li><button class="filter-pill-btn active" data-category="all" data-i18n="catAll">All Deals</button></li>
-            <li><button class="filter-pill-btn" data-category="bundles" data-i18n="catBaskets">Savings Bundles</button></li>
-            <li><button class="filter-pill-btn" data-category="pantry" data-i18n="catPantry">Pantry Staples</button></li>
-            <li><button class="filter-pill-btn" data-category="canned" data-i18n="catCanned">Canned Goods</button></li>
-            <li><button class="filter-pill-btn" data-category="beverages" data-i18n="catBeverages">Beverages & Drinks</button></li>
-            <li><button class="filter-pill-btn" data-category="snacks" data-i18n="catSnacks">Biscuits & Snacks</button></li>
-          </ul>
-
-          <div class="sort-wrap">
-            <span data-i18n="sortBy">Sort by:</span>
-            <select id="sortSelect" class="sort-select" aria-label="Sort catalog">
-              <option value="featured" data-i18n="sortFeatured">Top Value Deals</option>
-              <option value="price-asc" data-i18n="sortPriceAsc">Price: Low to High</option>
-              <option value="price-desc" data-i18n="sortPriceDesc">Price: High to Low</option>
-              <option value="rating" data-i18n="sortRating">Customer Rating</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Catalog Grid (Rendered by js/app.js) -->
-        <div id="catalogGrid" class="catalog-grid"></div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         TDB FOR BUSINESS & HORECA SECTION (Hotels, Cafes, Restaurants)
-         ========================================================================== -->
-    <section id="b2b" class="b2b-section">
-      <div class="container">
-        <div class="b2b-banner-box">
-          <div class="b2b-content-col">
-            <div class="b2b-badge-pill">
-              <span>B2B WHOLESALE SUPPLY</span>
-            </div>
-            <h2 class="b2b-title" data-i18n="b2bTitle">TDB for Business & HoReCa</h2>
-            <p class="b2b-subtitle" data-i18n="b2bSubtitle">
-              Wholesale bulk supply direct to Hotels, Cafes, Restaurants, and Corporate Offices with dedicated account managers and VAT invoicing.
-            </p>
-            <ul class="b2b-perks-list">
-              <li class="b2b-perk-item">
-                <span class="b2b-perk-icon">✓</span>
-                <span data-i18n="b2bFeature1">Direct Manufacturer Pricing</span>
-              </li>
-              <li class="b2b-perk-item">
-                <span class="b2b-perk-icon">✓</span>
-                <span data-i18n="b2bFeature2">Flexible Payment Terms (NET 30)</span>
-              </li>
-              <li class="b2b-perk-item">
-                <span class="b2b-perk-icon">✓</span>
-                <span data-i18n="b2bFeature3">Daily Scheduled Logistics</span>
-              </li>
-              <li class="b2b-perk-item">
-                <span class="b2b-perk-icon">✓</span>
-                <span data-i18n="b2bFeature4">Dedicated Key Account Support</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="b2b-cta-col">
-            <span class="b2b-cta-tagline">HoReCa Supply Partner</span>
-            <h3 class="b2b-cta-heading" data-i18n="b2bTitle">Supplying 300+ Businesses</h3>
-            <button id="openB2BModalBtn" class="btn-primary-cream" style="width: 100%;" data-i18n="b2bCtaBtn">
-              Request Wholesale Price List
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         HOW IT WORKS SECTION (Direct Wholesale Supply Chain)
-         ========================================================================== -->
-    <section id="how-it-works" class="how-it-works-section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-eyebrow" data-i18n="navHowItWorks">HOW IT WORKS</span>
-          <h2 class="section-title" data-i18n="howTitle">From Brand Manufacturers Straight To Your Home</h2>
-          <p class="section-subtitle" data-i18n="howSubtitle">
-            A direct, streamlined supply chain built to eliminate retail markups and save families money.
-          </p>
-        </div>
-
-        <div class="how-steps-grid">
-          <!-- Step 1 -->
-          <div class="how-step-card">
-            <div class="how-step-badge">1</div>
-            <h3 class="how-step-title" data-i18n="step1Title">Direct Brand Sourcing</h3>
-            <p class="how-step-desc" data-i18n="step1Desc">
-              We procure packaged goods in massive container volumes directly from official FMCG brand distributors.
-            </p>
-          </div>
-
-          <!-- Step 2 -->
-          <div class="how-step-card">
-            <div class="how-step-badge">2</div>
-            <h3 class="how-step-title" data-i18n="step2Title">Rigorous Expiry & Quality Audit</h3>
-            <p class="how-step-desc" data-i18n="step2Desc">
-              Every sack, tin, carton and jar is inspected in our temperature-regulated modern distribution centers.
-            </p>
-          </div>
-
-          <!-- Step 3 -->
-          <div class="how-step-card">
-            <div class="how-step-badge">3</div>
-            <h3 class="how-step-title" data-i18n="step3Title">Doorstep Bulk Delivery</h3>
-            <p class="how-step-desc" data-i18n="step3Desc">
-              Our heavy-duty delivery fleet brings entire month crates right inside your door, saving you heavy lifting.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         TESTIMONIALS SECTION
-         ========================================================================== -->
-    <section class="testimonials-section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-eyebrow">VERIFIED CUSTOMERS</span>
-          <h2 class="section-title" data-i18n="testimonialsTitle">Trusted by Families & Local Businesses</h2>
-          <p class="section-subtitle" data-i18n="testimonialsSubtitle">
-            See how thousands of households cut their monthly grocery bills by buying wholesale.
-          </p>
-        </div>
-
-        <div class="testimonials-grid">
-          <!-- Review 1 -->
-          <div class="testimonial-card">
-            <div class="testimonial-stars">★★★★★</div>
-            <p class="testimonial-quote">
-              "The Monthly Pantry Basket saved us over $65 compared to our local hypermarket. The rice sacks, cooking oil, and canned tuna arrived sealed in perfect factory condition right to our 4th floor door."
-            </p>
-            <div class="testimonial-author">
-              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Nourhan S." class="testimonial-avatar" />
-              <div>
-                <div class="testimonial-name">Nourhan Samir</div>
-                <div class="testimonial-meta">Monthly Family Subscriber</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Review 2 -->
-          <div class="testimonial-card">
-            <div class="testimonial-stars">★★★★★</div>
-            <p class="testimonial-quote">
-              "وفرنا بشكل ملحوظ في ميزانية البيت من أول شهر. كرتونة التوفير بتكفينا الشهر كله بأسعار الجملة بدون تعب اللف في السوبرماركت ومصاريف المشاوير."
-            </p>
-            <div class="testimonial-author">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Hesham M." class="testimonial-avatar" />
-              <div>
-                <div class="testimonial-name">Hesham Mahmoud</div>
-                <div class="testimonial-meta">مشتري شهري معتمد</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Review 3 -->
-          <div class="testimonial-card">
-            <div class="testimonial-stars">★★★★★</div>
-            <p class="testimonial-quote">
-              "We run a high-volume cafe, and TDB for Business supplies our milk, tea, coffee, and sugar cartons at direct distributor wholesale rates. Always punctual, with complete tax invoices."
-            </p>
-            <div class="testimonial-author">
-              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Karim F." class="testimonial-avatar" />
-              <div>
-                <div class="testimonial-name">Karim Fahmy</div>
-                <div class="testimonial-meta">Cafe & Lounge Operations Director</div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <!-- Catalog Mount: 3 Tabs & 2 Products -->
+        <div id="catalogGrid"></div>
       </div>
     </section>
   </main>
 
   <!-- ==========================================================================
-       SLIDE-OUT CART DRAWER
+       CART DRAWER MOUNT (Rendered by src/components/cart/CartDrawer.js)
        ========================================================================== -->
-  <div id="cartDrawerOverlay" class="cart-drawer-overlay">
-    <aside class="cart-drawer" aria-label="Shopping Cart">
-      <!-- Cart Header -->
-      <div class="cart-header">
-        <h2 class="cart-header-title" data-i18n="cartTitle">Your Shopping Basket</h2>
-        <button id="cartCloseBtn" class="cart-close-btn" aria-label="Close Cart">✕</button>
-      </div>
+  <div id="cartDrawerMount"></div>
 
-      <!-- Free Shipping Progress -->
-      <div class="cart-shipping-bar">
-        <div id="shippingBarText">Add $45.00 more for FREE Delivery!</div>
-        <div class="shipping-progress-track">
-          <div id="shippingProgressFill" class="shipping-progress-fill"></div>
-        </div>
-      </div>
-
-      <!-- Empty State -->
-      <div id="cartEmptyState" class="cart-empty-state" style="display: none;">
-        <svg class="cart-empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <path d="M16 10a4 4 0 0 1-8 0"></path>
-        </svg>
-        <h3 class="cart-empty-title" data-i18n="emptyCartTitle">Your basket is empty</h3>
-        <p class="cart-empty-desc" data-i18n="emptyCartSubtitle">Explore our wholesale grocery deals and add pantry essentials.</p>
-        <button class="btn-primary-cream" onclick="window.tdbApp.closeCartDrawer();" data-i18n="startShopping">
-          Shop Wholesale Deals
-        </button>
-      </div>
-
-      <!-- Cart Items List -->
-      <div id="cartItemsList" class="cart-items-list"></div>
-
-      <!-- Cart Footer -->
-      <div id="cartFooter" class="cart-footer">
-        <!-- Promo Code Input -->
-        <form id="promoForm" class="promo-form">
-          <input type="text" id="promoInput" class="promo-input" placeholder="Enter promo code (e.g. DAILYFRESH)" />
-          <button type="submit" class="promo-btn" data-i18n="applyPromo">Apply</button>
-        </form>
-        <div id="promoMessage" style="font-size: 0.75rem; margin-bottom: 0.75rem;"></div>
-
-        <!-- Calculations -->
-        <div class="cart-summary-line">
-          <span data-i18n="subtotal">Subtotal</span>
-          <span id="subtotalAmount">$0.00</span>
-        </div>
-        <div class="cart-summary-line">
-          <span data-i18n="deliveryFee">Delivery Fee</span>
-          <span id="deliveryFeeAmount">$4.50</span>
-        </div>
-        <div id="discountLine" class="cart-summary-line" style="display: none; color: #2e7d32;">
-          <span data-i18n="discount">Promo Discount (-15%)</span>
-          <span id="discountAmount">-$0.00</span>
-        </div>
-        <div class="cart-summary-line total">
-          <span data-i18n="total">Total</span>
-          <span id="totalAmount">$0.00</span>
-        </div>
-
-        <!-- Checkout Action Button -->
-        <button id="checkoutBtn" class="checkout-action-btn">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-          <span data-i18n="checkoutBtn">Proceed to Checkout</span>
-        </button>
-
-        <div style="font-size: 0.72rem; color: var(--tdb-text-muted); text-align: center; margin-top: 0.75rem;" data-i18n="secureCheckoutText">
-          Encrypted & Secure 256-bit Checkout
-        </div>
-      </div>
-    </aside>
-  </div>
+  <!-- ==========================================================================
+       CHECKOUT MODAL MOUNT (Rendered by src/components/cart/CheckoutModal.js)
+       ========================================================================== -->
+  <div id="checkoutModalMount"></div>
 
   <!-- ==========================================================================
        QUICK VIEW MODAL
@@ -560,289 +250,27 @@
   </div>
 
   <!-- ==========================================================================
-       B2B WHOLESALE INQUIRY MODAL (Hotels, Cafes, Restaurants)
-       ========================================================================== -->
-  <div id="b2bModal" class="modal-backdrop">
-    <div class="modal-container">
-      <button id="b2bCloseBtn" class="modal-close-corner" aria-label="Close B2B modal">✕</button>
-      <div class="checkout-modal-inner">
-        <h3 style="font-family: var(--font-serif-logo); font-size: 1.4rem; color: var(--tdb-green-dark); margin-bottom: 0.5rem;" data-i18n="b2bModalTitle">
-          Request Wholesale B2B Price List
-        </h3>
-        <p style="font-size: 0.85rem; color: var(--tdb-text-muted); margin-bottom: 1.5rem;" data-i18n="b2bSubtitle">
-          Wholesale bulk supply direct to Hotels, Cafes, Restaurants, and Corporate Offices with dedicated account managers and VAT invoicing.
-        </p>
-
-        <form id="b2bForm">
-          <div class="form-row-2">
-            <div class="form-group">
-              <label class="form-label" data-i18n="b2bBusinessName">Company / Establishment Name</label>
-              <input type="text" id="b2bName" class="form-input" placeholder="e.g. Grand Nile Hotel / Cairo Cafe" required />
-            </div>
-            <div class="form-group">
-              <label class="form-label" data-i18n="b2bBusinessType">Business Type</label>
-              <select id="b2bType" class="form-select">
-                <option value="hotel">Hotel / Resort</option>
-                <option value="cafe">Cafe / Coffee Shop</option>
-                <option value="restaurant">Restaurant / Cloud Kitchen</option>
-                <option value="supermarket">Grocery / Supermarket</option>
-                <option value="corporate">Corporate Office</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-row-2">
-            <div class="form-group">
-              <label class="form-label" data-i18n="b2bContactPerson">Contact Person</label>
-              <input type="text" id="b2bContact" class="form-input" placeholder="e.g. Procurement Manager" required />
-            </div>
-            <div class="form-group">
-              <label class="form-label" data-i18n="b2bPhone">Work Phone Number</label>
-              <input type="tel" id="b2bPhone" class="form-input" placeholder="+20 10 1234 5678" required />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" data-i18n="b2bEmail">Work Email</label>
-            <input type="email" id="b2bEmail" class="form-input" placeholder="procurement@company.com" required />
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" data-i18n="b2bEstimatedVolume">Estimated Monthly Order Volume</label>
-            <select id="b2bVolume" class="form-select">
-              <option value="1000-5000">$1,000 - $5,000 / month</option>
-              <option value="5000-15000">$5,000 - $15,000 / month</option>
-              <option value="15000+">$15,000+ / month</option>
-            </select>
-          </div>
-
-          <button type="submit" class="checkout-action-btn" style="margin-top: 1rem;">
-            <span data-i18n="b2bSubmitBtn">Submit Wholesale Request</span>
-          </button>
-        </form>
-        <div id="b2bSuccessAlert" style="display: none; background: #e4efe7; color: #1e4628; padding: 1rem; border-radius: var(--radius-sm); margin-top: 1rem; font-size: 0.85rem; font-weight: 600;"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ==========================================================================
-       MULTI-STEP CHECKOUT MODAL
-       ========================================================================== -->
-  <div id="checkoutModal" class="modal-backdrop">
-    <div class="modal-container">
-      <button id="checkoutClose" class="modal-close-corner" aria-label="Close checkout">✕</button>
-      <div class="checkout-modal-inner">
-        <!-- Steps Indicator -->
-        <div class="checkout-steps-indicator">
-          <span class="checkout-step-tab active" data-i18n="step1">1. Delivery</span>
-          <span class="checkout-step-tab" data-i18n="step2">2. Payment</span>
-          <span class="checkout-step-tab" data-i18n="step3">3. Confirmation</span>
-        </div>
-
-        <form id="checkoutForm" onsubmit="event.preventDefault();">
-          <!-- Step 1: Delivery Details -->
-          <div id="checkoutStep1">
-            <h3 style="font-family: var(--font-serif-logo); font-size: 1.3rem; margin-bottom: 1.25rem; color: var(--tdb-green-dark);" data-i18n="step1">
-              Delivery Address & Schedule
-            </h3>
-            <div class="form-row-2">
-              <div class="form-group">
-                <label class="form-label" data-i18n="fullName">Full Name</label>
-                <input type="text" id="custName" class="form-input" placeholder="e.g. Layla Hassan" required />
-              </div>
-              <div class="form-group">
-                <label class="form-label" data-i18n="phone">Phone Number</label>
-                <input type="tel" id="custPhone" class="form-input" placeholder="+20 10 1234 5678" required />
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" data-i18n="address">Delivery Street Address</label>
-              <input type="text" id="custAddress" class="form-input" placeholder="Building name, Street, Apartment No." required />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" data-i18n="deliverySlot">Preferred Delivery Window</label>
-              <select id="custSlot" class="form-select">
-                <option value="morning" data-i18n="slotMorning">Morning Delivery (9:00 AM - 1:00 PM)</option>
-                <option value="afternoon" data-i18n="slotAfternoon">Afternoon Delivery (2:00 PM - 6:00 PM)</option>
-                <option value="evening" data-i18n="slotEvening">Evening Delivery (7:00 PM - 10:00 PM)</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" data-i18n="specialNotes">Delivery Instructions</label>
-              <input type="text" class="form-input" placeholder="e.g. Floor 3, elevator available, call upon arrival" />
-            </div>
-
-            <button type="button" id="toPaymentBtn" class="checkout-action-btn">
-              <span data-i18n="step2">Proceed to Payment</span> →
-            </button>
-          </div>
-
-          <!-- Step 2: Payment Method -->
-          <div id="checkoutStep2" style="display: none;">
-            <h3 style="font-family: var(--font-serif-logo); font-size: 1.3rem; margin-bottom: 1.25rem; color: var(--tdb-green-dark);" data-i18n="paymentMethod">
-              Payment Method
-            </h3>
-
-            <div class="payment-radio-group">
-              <div class="payment-radio-card active" data-method="card">
-                <input type="radio" name="paymethod" checked />
-                <span data-i18n="cardPayment">Credit / Debit Card</span>
-              </div>
-              <div class="payment-radio-card" data-method="applepay">
-                <input type="radio" name="paymethod" />
-                <span data-i18n="applePay">Apple Pay / Wallet</span>
-              </div>
-              <div class="payment-radio-card" data-method="cod">
-                <input type="radio" name="paymethod" />
-                <span data-i18n="cod">Cash on Delivery</span>
-              </div>
-            </div>
-
-            <div id="creditCardInputs">
-              <div class="form-group">
-                <label class="form-label" data-i18n="cardNumber">Card Number</label>
-                <input type="text" class="form-input" placeholder="4242 •••• •••• 4242" value="4532 8901 2345 6789" />
-              </div>
-              <div class="form-row-2">
-                <div class="form-group">
-                  <label class="form-label" data-i18n="cardExpiry">MM / YY</label>
-                  <input type="text" class="form-input" placeholder="08/28" value="11/27" />
-                </div>
-                <div class="form-group">
-                  <label class="form-label" data-i18n="cardCvc">CVC</label>
-                  <input type="text" class="form-input" placeholder="123" value="892" />
-                </div>
-              </div>
-            </div>
-
-            <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem;">
-              <button type="button" id="backToDetailsBtn" class="btn-secondary-outline" style="color: var(--tdb-green); border-color: var(--tdb-border);">
-                ← Back
-              </button>
-              <button type="button" id="confirmOrderBtn" class="checkout-action-btn" style="flex: 1; margin-top: 0;">
-                <span data-i18n="placeOrder">Confirm Grocery Order</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Step 3: Order Confirmed -->
-          <div id="checkoutStep3" style="display: none;">
-            <div class="order-success-box">
-              <div class="success-check-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </div>
-              <h3 style="font-family: var(--font-serif-logo); font-size: 1.6rem; color: var(--tdb-green-dark); margin-bottom: 0.5rem;" data-i18n="orderSuccessTitle">
-                Order Confirmed Successfully!
-              </h3>
-              <p style="font-size: 0.88rem; color: var(--tdb-text-muted); margin-bottom: 1.5rem;" data-i18n="orderSuccessMessage">
-                Your wholesale grocery order has been dispatched to our local distribution hub. Our delivery team is on the way.
-              </p>
-              <div style="background: var(--tdb-cream-light); border: 1px dashed var(--tdb-border); border-radius: var(--radius-sm); padding: 1rem; margin-bottom: 1.75rem;">
-                <div style="font-size: 0.8rem; color: var(--tdb-text-muted);"><span data-i18n="orderNumber">Order Reference</span>: <strong id="orderNumberDisplay" style="color: var(--tdb-green);">TDB-748291</strong></div>
-                <div style="font-size: 0.8rem; color: var(--tdb-text-muted); margin-top: 0.35rem;"><span data-i18n="estimatedArrival">Estimated Delivery</span>: <strong>Today within 3 Hours</strong></div>
-              </div>
-              <button type="button" id="backHomeBtn" class="btn-primary-cream" data-i18n="backToHome">
-                Return to Shop
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- ==========================================================================
-       TOAST NOTIFICATIONS CONTAINER
+       TOAST NOTIFICATIONS CONTAINER (Rendered by src/components/common/Toast.js)
        ========================================================================== -->
   <div id="toastContainer" class="toast-container" aria-live="polite"></div>
 
   <!-- ==========================================================================
-       FOOTER SECTION (Reversed Version: Dark Green #26412C with Cream #F1E9DB)
+       FOOTER MOUNT (Rendered by src/components/common/Footer.js)
        ========================================================================== -->
-  <footer id="about" class="site-footer">
-    <div class="container">
-      <div class="footer-top-grid">
-        <!-- Brand Column (Reversed Version) -->
-        <div class="footer-brand-col">
-          <a href="#home" class="tdb-logo-lockup tdb-logo--reversed" aria-label="The Daily Basket Home">
-            <div class="tdb-monogram">TDB</div>
-            <div class="tdb-text tdb-text-group">
-              <span class="tdb-name tdb-brand-name">THE DAILY BASKET</span>
-              <span class="tdb-tag tdb-arabic-tagline">ما تحتاجه كل يوم</span>
-            </div>
-          </a>
-          <p class="footer-tagline-text" data-i18n="footerAbout">
-            The Daily Basket (TDB) is your hyper-local grocery partner, delivering original brands, pantry staples, and bulk savings direct from authorized distributors.
-          </p>
-          <div class="social-links-row">
-            <a href="#" class="social-icon-btn" aria-label="Instagram">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-            </a>
-            <a href="#" class="social-icon-btn" aria-label="Twitter">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
-            </a>
-            <a href="#" class="social-icon-btn" aria-label="Facebook">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-            </a>
-          </div>
-        </div>
+  <div id="footerMount"></div>
 
-        <!-- Quick Wholesale Links -->
-        <div>
-          <h4 class="footer-heading" data-i18n="footerLinksHeader">Wholesale Categories</h4>
-          <ul class="footer-nav-list">
-            <li><a href="#baskets" class="footer-nav-link" data-i18n="navBaskets">Savings Baskets</a></li>
-            <li><a href="#catalog" class="footer-nav-link" data-i18n="navPantry">Pantry Staples</a></li>
-            <li><a href="#catalog" class="footer-nav-link" data-i18n="navCanned">Canned Goods</a></li>
-            <li><a href="#catalog" class="footer-nav-link" data-i18n="catBeverages">Beverages & Drinks</a></li>
-          </ul>
-        </div>
-
-        <!-- TDB for Business (HoReCa) -->
-        <div>
-          <h4 class="footer-heading" data-i18n="footerFarmHeader">TDB for Business</h4>
-          <ul class="footer-nav-list">
-            <li><a href="#b2b" class="footer-nav-link">HoReCa Supply Solutions</a></li>
-            <li><a href="#b2b" class="footer-nav-link">Hotel & Restaurant Accounts</a></li>
-            <li><a href="#b2b" class="footer-nav-link">Corporate Office Pantries</a></li>
-            <li><a href="#b2b" class="footer-nav-link">VAT Invoice Procurement</a></li>
-          </ul>
-        </div>
-
-        <!-- Newsletter Subscription -->
-        <div>
-          <h4 class="footer-heading" data-i18n="newsletterTitle">Wholesale Deals Alert</h4>
-          <p style="font-size: 0.82rem; color: var(--tdb-border); line-height: 1.5;" data-i18n="newsletterSubtitle">
-            Subscribe for weekly wholesale forecast notes, distributor volume discounts, and crate price drops.
-          </p>
-          <form id="newsletterForm" class="newsletter-form">
-            <input type="email" id="newsletterInput" class="newsletter-input" placeholder="Enter your email address..." required />
-            <button type="submit" class="newsletter-submit-btn" data-i18n="subscribeBtn">Subscribe</button>
-          </form>
-          <div id="newsletterMsg" class="newsletter-status-msg"></div>
-        </div>
-      </div>
-
-      <!-- Bottom Bar -->
-      <div class="footer-bottom-bar">
-        <span data-i18n="rightsReserved">© 2026 The Daily Basket Co. (TDB). All rights reserved.</span>
-        <div style="display: flex; gap: 1.5rem;">
-          <a href="#" class="footer-nav-link">Wholesale Terms</a>
-          <a href="#" class="footer-nav-link">Commercial Privacy</a>
-          <a href="#" class="footer-nav-link">Brand Distributor Guarantee</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
+  <!-- Component Scripts from src/components/ -->
   <script src="js/products.js"></script>
   <script src="js/translations.js"></script>
-  <script src="js/app.js"></script>
+  <script src="src/components/common/Header.js"></script>
+  <script src="src/components/common/Footer.js"></script>
+  <script src="src/components/common/Toast.js"></script>
+  <script src="src/components/catalog/CategoryCard.js"></script>
+  <script src="src/components/catalog/ProductCard.js"></script>
+  <script src="src/components/catalog/CatalogGrid.js"></script>
+  <script src="src/components/cart/CartDrawer.js"></script>
+  <script src="src/components/cart/CheckoutModal.js"></script>
+  <!-- Application Controller -->
+  <script src="src/app.js"></script>
 </body>
 </html>

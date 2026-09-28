@@ -19,8 +19,8 @@ const PRODUCTS_DATA = [
     rating: 4.9,
     reviewsCount: 620,
     image: "https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=800&q=80",
-    farmOrigin_en: "Authorized FMCG Brand Distributors",
-    farmOrigin_ar: "وكلاء وموزعي الشركات الغذائية المعتمدين",
+    distributor_en: "Authorized FMCG Brand Distributors",
+    distributor_ar: "وكلاء وموزعي الشركات الغذائية المعتمدين",
     isSubscriptionAvailable: true,
     contents_en: [
       "1x Premium White Rice (5kg Bag)",
@@ -41,8 +41,7 @@ const PRODUCTS_DATA = [
       "٤ علب فول مدمس بالخلطة المصرية (٤٠٠ جم)",
       "٢ برطمان معجون طماطم مركز (٣٧٥ جم)",
       "١ عبوة شاي أسود خرز فاخر ٢٥٠ جم"
-    ],
-    nutrition: { calories: "Wholesale Value", fiber: "Long Shelf Life", organic: "100% Original Brands" }
+    ]
   },
   {
     id: "bundle-breakfast-tea",
@@ -60,8 +59,8 @@ const PRODUCTS_DATA = [
     rating: 4.8,
     reviewsCount: 310,
     image: "https://images.unsplash.com/photo-1584473457406-6240486418e9?auto=format&fit=crop&w=800&q=80",
-    farmOrigin_en: "Authorized FMCG Brand Distributors",
-    farmOrigin_ar: "موزعي شركات الشاي والمشروبات المعتمدين",
+    distributor_en: "Authorized FMCG Brand Distributors",
+    distributor_ar: "موزعي شركات الشاي والمشروبات المعتمدين",
     isSubscriptionAvailable: true,
     contents_en: [
       "1x Premium Black Tea Box (250g)",
@@ -76,8 +75,7 @@ const PRODUCTS_DATA = [
       "٤ علب حليب مبخر مخصص للشاي (١٧٠ جم)",
       "١ برطمان كريمة كاكاو وبندق فاخرة ٤٠٠ جم",
       "١ باكت بسكويت شاي بالزبدة (١٢ باكو مغلف)"
-    ],
-    nutrition: { calories: "Breakfast Box", fiber: "Shelf-stable", organic: "Direct Distributor" }
+    ]
   },
   {
     id: "bundle-quick-meals",
@@ -95,8 +93,8 @@ const PRODUCTS_DATA = [
     rating: 4.9,
     reviewsCount: 245,
     image: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=800&q=80",
-    farmOrigin_en: "Direct Manufacturer Supply",
-    farmOrigin_ar: "توريد مباشر من مصانع الأغذية",
+    distributor_en: "Direct Manufacturer Supply",
+    distributor_ar: "توريد مباشر من مصانع الأغذية",
     isSubscriptionAvailable: false,
     contents_en: [
       "10x Assorted Instant Flavor Noodles (70g each)",
@@ -111,8 +109,7 @@ const PRODUCTS_DATA = [
       "٤ علب فول مدمس بخلطة الطحينة والكمون (٤٠٠ جم)",
       "٢ علبة ذرة صفراء حب كامل (٣٤٠ جم)",
       "٢ برطمان صوص مكرونة بالريحان والثوم (٣٥٠ جم)"
-    ],
-    nutrition: { calories: "Pantry Ready", fiber: "High Protein", organic: "Wholesale Value" }
+    ]
   },
 
   // ==========================================
@@ -134,8 +131,8 @@ const PRODUCTS_DATA = [
     rating: 5.0,
     reviewsCount: 890,
     image: "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=800&q=80",
-    farmOrigin_en: "Authorized Rice Mills Distributor",
-    farmOrigin_ar: "وكلاء مضارب الأرز المعتمدة",
+    distributor_en: "Authorized Rice Mills Distributor",
+    distributor_ar: "وكلاء مضارب الأرز المعتمدة",
     isSubscriptionAvailable: false
   },
   {
@@ -154,8 +151,8 @@ const PRODUCTS_DATA = [
     rating: 4.9,
     reviewsCount: 540,
     image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=800&q=80",
-    farmOrigin_en: "National Edible Oils Distributor",
-    farmOrigin_ar: "موزع زيوت الطعام المعتمد",
+    distributor_en: "National Edible Oils Distributor",
+    distributor_ar: "موزع زيوت الطعام المعتمد",
     isSubscriptionAvailable: false
   },
   {
@@ -174,8 +171,8 @@ const PRODUCTS_DATA = [
     rating: 4.9,
     reviewsCount: 420,
     image: "https://images.unsplash.com/photo-1551462147-ff29053bfc14?auto=format&fit=crop&w=800&q=80",
-    farmOrigin_en: "Direct Pasta Brand Distributor",
-    farmOrigin_ar: "موزع شركات المكرونة مباشرة",
+    distributor_en: "Direct Pasta Brand Distributor",
+    distributor_ar: "موزع شركات المكرونة مباشرة",
     isSubscriptionAvailable: false
   },
   {
@@ -194,8 +191,8 @@ const PRODUCTS_DATA = [
     rating: 4.8,
     reviewsCount: 380,
     image: "https://images.unsplash.com/photo-1581441363689-1f3c3c414635?auto=format&fit=crop&w=800&q=80",
-    farmOrigin_en: "Sugar Refining Co. Distributor",
-    farmOrigin_ar: "وكيل مصانع تكرير السكر",
+    distributor_en: "Sugar Refining Co. Distributor",
+    distributor_ar: "وكيل مصانع تكرير السكر",
     isSubscriptionAvailable: false
   },
   {
@@ -214,8 +211,8 @@ const PRODUCTS_DATA = [
     rating: 4.9,
     reviewsCount: 290,
     image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80",
-    farmOrigin_en: "Certified Dairy Brands Distributor",
-    farmOrigin_ar: "وكيل معتمد لشركات الألبان والسمن",
+    distributor_en: "Certified Dairy Brands Distributor",
+    distributor_ar: "وكيل معتمد لشركات الألبان والسمن",
     isSubscriptionAvailable: false
   },
 
@@ -238,8 +235,8 @@ const PRODUCTS_DATA = [
     rating: 4.9,
     reviewsCount: 512,
     image: "https://images.unsplash.com/photo-1534483509719-3feaee7c30da?auto=format&fit=crop&w=800&q=80",
-    farmOrigin_en: "Seafood Import Agency Distributor",
-    farmOrigin_ar: "توكيل استيراد الأسماك المعلبة",
+    distributor_en: "Seafood Import Agency Distributor",
+    distributor_ar: "توكيل استيراد الأسماك المعلبة",
     isSubscriptionAvailable: false
   },
   {
@@ -258,8 +255,8 @@ const PRODUCTS_DATA = [
     rating: 4.8,
     reviewsCount: 360,
     image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80",
-    farmOrigin_en: "Canned Foods Brand Distributor",
-    farmOrigin_ar: "موزع شركات الصناعات الغذائية",
+    distributor_en: "Canned Foods Brand Distributor",
+    distributor_ar: "موزع شركات الصناعات الغذائية",
     isSubscriptionAvailable: false
   },
   {
@@ -278,8 +275,8 @@ const PRODUCTS_DATA = [
     rating: 4.9,
     reviewsCount: 280,
     image: "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=800&q=80",
-    farmOrigin_en: "National Canners Cooperative",
-    farmOrigin_ar: "موزع معتمد لشركات الصلصة",
+    distributor_en: "National Canners Cooperative",
+    distributor_ar: "موزع معتمد لشركات الصلصة",
     isSubscriptionAvailable: false
   },
 
@@ -302,8 +299,8 @@ const PRODUCTS_DATA = [
     rating: 4.9,
     reviewsCount: 410,
     image: "https://images.unsplash.com/photo-1613478223719-2ab802602423?auto=format&fit=crop&w=800&q=80",
-    farmOrigin_en: "Direct Juice Brand Distributor",
-    farmOrigin_ar: "موزع شركات العصائر الكبرى",
+    distributor_en: "Direct Juice Brand Distributor",
+    distributor_ar: "موزع شركات العصائر الكبرى",
     isSubscriptionAvailable: false
   },
   {
@@ -322,8 +319,8 @@ const PRODUCTS_DATA = [
     rating: 4.8,
     reviewsCount: 650,
     image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=800&q=80",
-    farmOrigin_en: "Official Bottling Co. Distributor",
-    farmOrigin_ar: "وكيل شركات التعبئة والمشروبات الغازية",
+    distributor_en: "Official Bottling Co. Distributor",
+    distributor_ar: "وكيل شركات التعبئة والمشروبات الغازية",
     isSubscriptionAvailable: false
   },
   {
@@ -342,8 +339,8 @@ const PRODUCTS_DATA = [
     rating: 5.0,
     reviewsCount: 780,
     image: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80",
-    farmOrigin_en: "Direct Tea Importers Agency",
-    farmOrigin_ar: "وكيل استيراد الشاي المعتمد",
+    distributor_en: "Direct Tea Importers Agency",
+    distributor_ar: "وكيل استيراد الشاي المعتمد",
     isSubscriptionAvailable: false
   },
 
@@ -366,8 +363,8 @@ const PRODUCTS_DATA = [
     rating: 4.9,
     reviewsCount: 390,
     image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=800&q=80",
-    farmOrigin_en: "Biscuits & Confectionery Brand Distributor",
-    farmOrigin_ar: "موزع مصانع البسكويت والحلويات",
+    distributor_en: "Biscuits & Confectionery Brand Distributor",
+    distributor_ar: "موزع مصانع البسكويت والحلويات",
     isSubscriptionAvailable: false
   },
   {
@@ -386,8 +383,12 @@ const PRODUCTS_DATA = [
     rating: 4.8,
     reviewsCount: 315,
     image: "https://images.unsplash.com/photo-1548848221-0c2e497ed557?auto=format&fit=crop&w=800&q=80",
-    farmOrigin_en: "Confectionery Brands Agency",
-    farmOrigin_ar: "توكيل الحلويات والشوكولاتة",
+    distributor_en: "Confectionery Brands Agency",
+    distributor_ar: "توكيل الحلويات والشوكولاتة",
     isSubscriptionAvailable: false
   }
 ];
+
+if (typeof window !== "undefined") {
+  window.PRODUCTS_DATA = PRODUCTS_DATA;
+}

@@ -2438,3 +2438,227 @@ a {
   display: block;
   padding: 0.4rem 0;
 }
+
+/* ==========================================================================
+   LEAN MVP: 2-CATEGORY SPOTLIGHT & WHOLESALE MOQ STYLES
+   ========================================================================== */
+
+/* Category Spotlight Section (Immediately visible upon load) */
+.category-spotlight-section {
+  padding: 3.5rem 0 2rem;
+  background-color: var(--tdb-cream-light);
+}
+
+.category-spotlight-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .category-spotlight-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.category-spotlight-card {
+  background: var(--tdb-white);
+  border: 1px solid var(--tdb-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+}
+
+.category-spotlight-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--tdb-green);
+}
+
+.category-card-media {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+  background-color: var(--tdb-green-dark);
+}
+
+.category-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.category-spotlight-card:hover .category-card-media img {
+  transform: scale(1.06);
+}
+
+.category-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(27,45,31,0.65) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 1.25rem;
+}
+
+.category-tagline-badge {
+  background: rgba(241, 233, 219, 0.95);
+  color: var(--tdb-green-dark);
+  font-family: var(--font-brand);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.category-card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.category-card-title {
+  font-family: var(--font-serif-logo);
+  font-size: 1.45rem;
+  color: var(--tdb-green-dark);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.category-card-desc {
+  font-size: 0.88rem;
+  color: var(--tdb-text-muted);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.category-card-action-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--tdb-border-subtle);
+}
+
+.category-item-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.75rem;
+  color: var(--tdb-green);
+  font-weight: 600;
+}
+
+.btn-category-select {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: var(--tdb-green);
+  color: var(--tdb-cream);
+  font-family: var(--font-brand);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.15rem;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+.category-spotlight-card:hover .btn-category-select {
+  background-color: var(--tdb-green-dark);
+  color: var(--tdb-white);
+  transform: translateX(3px);
+}
+
+[dir="rtl"] .category-spotlight-card:hover .btn-category-select {
+  transform: translateX(-3px);
+}
+
+/* Wholesale MOQ Pill */
+.wholesale-moq-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #f2ede1;
+  color: var(--tdb-green-dark);
+  border: 1px solid var(--tdb-border);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin: 0.5rem 0 0.75rem;
+  width: fit-content;
+}
+
+.wholesale-moq-pill svg {
+  color: var(--tdb-green);
+  flex-shrink: 0;
+}
+
+/* Product Savings Badge */
+.product-savings-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #b73225;
+  color: #ffffff;
+  font-family: var(--font-brand);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 10px rgba(183, 50, 37, 0.3);
+  z-index: 2;
+}
+
+[dir="rtl"] .product-savings-badge {
+  right: auto;
+  left: 1rem;
+}
+
+/* 2-Category Catalog Grid */
+.catalog-grid--two-category {
+  grid-template-columns: repeat(2, 1fr) !important;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .catalog-grid--two-category {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.wholesale-product-card {
+  max-width: 480px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.wholesale-product-card .price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.cart-link {
+  cursor: pointer;
+}
