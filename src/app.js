@@ -233,8 +233,17 @@
     document.addEventListener('click', (e) => {
       const radioCard = e.target.closest('.payment-radio-card');
       if (radioCard) {
-        document.querySelectorAll('.payment-radio-card').forEach(c => c.classList.remove('active'));
+        // Update active visual state on all cards
+        document.querySelectorAll('.payment-radio-card').forEach(c => {
+          c.classList.remove('active');
+          const radio = c.querySelector('input[type="radio"]');
+          if (radio) radio.checked = false;
+        });
         radioCard.classList.add('active');
+        const radio = radioCard.querySelector('input[type="radio"]');
+        if (radio) radio.checked = true;
+
+        // Show/hide credit card inputs based on selected method
         const cardInputs = document.getElementById('creditCardInputs');
         if (cardInputs) {
           cardInputs.style.display = radioCard.dataset.method === 'card' ? 'block' : 'none';

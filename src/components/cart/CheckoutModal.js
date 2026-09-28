@@ -66,18 +66,18 @@ function renderCheckoutModal(lang = 'en') {
               </h3>
 
               <div class="payment-radio-group">
-                <div class="payment-radio-card active" data-method="card">
-                  <input type="radio" name="paymethod" checked />
+                <label class="payment-radio-card active" data-method="card">
+                  <input type="radio" name="paymentMethod" value="card" checked />
                   <span>${isAr ? 'بطاقة بنكية / فيزا / ماستركارد' : 'Credit / Debit Card'}</span>
-                </div>
-                <div class="payment-radio-card" data-method="applepay">
-                  <input type="radio" name="paymethod" />
+                </label>
+                <label class="payment-radio-card" data-method="applepay">
+                  <input type="radio" name="paymentMethod" value="applepay" />
                   <span>${isAr ? 'أبل باي / المحافظ الإلكترونية' : 'Apple Pay / Digital Wallet'}</span>
-                </div>
-                <div class="payment-radio-card" data-method="cod">
-                  <input type="radio" name="paymethod" />
+                </label>
+                <label class="payment-radio-card" data-method="cod">
+                  <input type="radio" name="paymentMethod" value="cod" />
                   <span>${isAr ? 'الدفع نقداً عند الاستلام' : 'Cash on Delivery'}</span>
-                </div>
+                </label>
               </div>
 
               <div id="creditCardInputs">
