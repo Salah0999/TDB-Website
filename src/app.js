@@ -178,6 +178,13 @@
       if (e.target.closest('#checkoutClose')) {
         closeCheckoutModal();
       }
+      const completedTab = e.target.closest('.checkout-step-tab.completed');
+      if (completedTab) {
+        const targetStep = parseInt(completedTab.dataset.step, 10);
+        if (targetStep && targetStep < state.checkoutStep) {
+          setCheckoutStep(targetStep);
+        }
+      }
       if (e.target.closest('#toPaymentBtn')) {
         const name = document.getElementById('custName')?.value.trim();
         const phone = document.getElementById('custPhone')?.value.trim();
@@ -362,7 +369,7 @@
     if (matches.length === 0) {
       dropdown.innerHTML = `
         <div style="padding: 1rem; text-align: center; color: var(--tdb-text-muted); font-size: 0.8rem;">
-          ${isAr ? 'لم يتم العثور على منتجات مطابقة' : 'No wholesale items matching your search'}
+          ${isAr ? 'لم يتم العثور على منتجات مطابقة' : 'No items matching your search'}
         </div>
       `;
     } else {
@@ -567,11 +574,39 @@
 
   function setCheckoutStep(step) {
     state.checkoutStep = step;
-    document.querySelectorAll('.checkout-step-tab').forEach((tab, index) => {
-      if (index + 1 === step) {
+    const isAr = state.lang === 'ar';
+    const arabicDigits = ['١', '٢', '٣'];
+
+    // Update Step Tabs
+    document.querySelectorAll('.checkout-step-tab').forEach((tab) => {
+      const tabStep = parseInt(tab.dataset.step, 10);
+      const numEl = tab.querySelector('.step-num');
+
+      tab.classList.remove('active', 'completed');
+
+      if (tabStep === step) {
         tab.classList.add('active');
+        if (tabStep === 3) {
+          tab.classList.add('completed');
+          if (numEl) numEl.textContent = '✓';
+        } else if (numEl) {
+          numEl.textContent = isAr ? arabicDigits[tabStep - 1] : tabStep;
+        }
+      } else if (tabStep < step) {
+        tab.classList.add('completed');
+        if (numEl) numEl.textContent = '✓';
       } else {
-        tab.classList.remove('active');
+        if (numEl) numEl.textContent = isAr ? arabicDigits[tabStep - 1] : tabStep;
+      }
+    });
+
+    // Update Progress Line Connectors
+    document.querySelectorAll('.checkout-step-connector').forEach((conn) => {
+      const connIndex = parseInt(conn.dataset.connector, 10);
+      if (connIndex < step) {
+        conn.classList.add('completed');
+      } else {
+        conn.classList.remove('completed');
       }
     });
 
@@ -598,7 +633,7 @@
     updateCartUI();
 
     setCheckoutStep(3);
-    showToast(isAr ? 'تم استلام طلبك بنجاح!' : 'Wholesale order placed successfully!');
+    showToast(isAr ? 'تم تأكيد طلبك بنجاح!' : 'Order confirmed successfully!');
   }
 
   /* ==========================================================================

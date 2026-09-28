@@ -2024,21 +2024,127 @@ a {
   justify-content: space-between;
   margin-bottom: 2rem;
   padding-bottom: 1.25rem;
+  padding-right: 3.5rem; /* Ensures clearance under the modal close 'X' button */
   border-bottom: 1px solid var(--tdb-border-subtle);
-}
-
-.checkout-step-tab {
-  font-family: var(--font-brand);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--tdb-text-muted);
   position: relative;
 }
 
-.checkout-step-tab.active {
+[dir="rtl"] .checkout-steps-indicator {
+  padding-right: 0;
+  padding-left: 3.5rem;
+}
+
+.checkout-step-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-brand);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--tdb-text-muted);
+  position: relative;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.checkout-step-tab.completed {
+  cursor: pointer;
   color: var(--tdb-green);
+}
+
+.checkout-step-tab.active {
+  color: var(--tdb-green-dark);
+  font-weight: 700;
+}
+
+.checkout-step-tab .step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: var(--tdb-cream-light);
+  border: 1.5px solid var(--tdb-border);
+  color: var(--tdb-text-muted);
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.checkout-step-tab.active .step-num {
+  background: var(--tdb-green);
+  border-color: var(--tdb-green);
+  color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(38, 65, 44, 0.15);
+}
+
+.checkout-step-tab.completed .step-num {
+  background: var(--tdb-green);
+  border-color: var(--tdb-green);
+  color: #ffffff;
+}
+
+.checkout-step-connector {
+  flex: 1;
+  height: 2px;
+  background: var(--tdb-border);
+  margin: 0 0.85rem;
+  min-width: 14px;
+  border-radius: 2px;
+  transition: background-color var(--transition-fast);
+}
+
+.checkout-step-connector.completed {
+  background: var(--tdb-green);
+}
+
+@media (max-width: 600px) {
+  .checkout-modal-inner {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .checkout-steps-indicator {
+    padding-right: 2.75rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  [dir="rtl"] .checkout-steps-indicator {
+    padding-right: 0;
+    padding-left: 2.75rem;
+  }
+
+  .checkout-step-tab {
+    font-size: 0.72rem;
+    gap: 0.35rem;
+  }
+
+  .checkout-step-tab .step-num {
+    width: 20px;
+    height: 20px;
+    font-size: 0.65rem;
+  }
+
+  .checkout-step-connector {
+    margin: 0 0.35rem;
+    min-width: 8px;
+  }
+}
+
+@media (max-width: 440px) {
+  .checkout-step-tab .step-label {
+    display: none;
+  }
+
+  .checkout-step-tab.active .step-label {
+    display: inline;
+  }
 }
 
 .form-group {

@@ -13,9 +13,20 @@ function renderCheckoutModal(lang = 'en') {
         <div class="checkout-modal-inner">
           <!-- Steps Indicator -->
           <div class="checkout-steps-indicator">
-            <span class="checkout-step-tab active" data-step="1">${isAr ? '١. بيانات التوصيل' : '1. Delivery'}</span>
-            <span class="checkout-step-tab" data-step="2">${isAr ? '٢. طريقة الدفع' : '2. Payment'}</span>
-            <span class="checkout-step-tab" data-step="3">${isAr ? '٣. تأكيد الطلب' : '3. Confirmation'}</span>
+            <div class="checkout-step-tab active" data-step="1">
+              <span class="step-num">${isAr ? '١' : '1'}</span>
+              <span class="step-label">${isAr ? 'بيانات التوصيل' : 'Delivery'}</span>
+            </div>
+            <div class="checkout-step-connector" data-connector="1"></div>
+            <div class="checkout-step-tab" data-step="2">
+              <span class="step-num">${isAr ? '٢' : '2'}</span>
+              <span class="step-label">${isAr ? 'طريقة الدفع' : 'Payment'}</span>
+            </div>
+            <div class="checkout-step-connector" data-connector="2"></div>
+            <div class="checkout-step-tab" data-step="3">
+              <span class="step-num">${isAr ? '٣' : '3'}</span>
+              <span class="step-label">${isAr ? 'تأكيد الطلب' : 'Confirmation'}</span>
+            </div>
           </div>
 
           <form id="checkoutForm" onsubmit="event.preventDefault();">
@@ -102,7 +113,7 @@ function renderCheckoutModal(lang = 'en') {
                   ← ${isAr ? 'رجوع' : 'Back'}
                 </button>
                 <button type="button" id="confirmOrderBtn" class="checkout-action-btn" style="flex: 1; margin-top: 0;">
-                  <span>${isAr ? 'تأكيد طلب الجملة' : 'Confirm Wholesale Order'}</span>
+                  <span>${isAr ? 'تأكيد الطلب' : 'Confirm Order'}</span>
                 </button>
               </div>
             </div>
@@ -116,10 +127,10 @@ function renderCheckoutModal(lang = 'en') {
                   </svg>
                 </div>
                 <h3 style="font-family: var(--font-serif-logo); font-size: 1.6rem; color: var(--tdb-green-dark); margin-bottom: 0.5rem;">
-                  ${isAr ? 'تم استلام طلبك بنجاح!' : 'Wholesale Order Confirmed!'}
+                  ${isAr ? 'تم تأكيد طلبك بنجاح!' : 'Order Confirmed!'}
                 </h3>
                 <p style="font-size: 0.88rem; color: var(--tdb-text-muted); margin-bottom: 1.5rem;">
-                  ${isAr ? 'تم إرسال طلبك لمركز التوزيع المعتمد لتجهيز الكراتين المغلفة وشحنها فوراً.' : 'Your wholesale order has been dispatched to our distribution center. Our team is preparing your sealed cartons.'}
+                  ${isAr ? 'تم استلام طلبك بنجاح وجارٍ تجهيزه للتوصيل فوراً.' : 'Your order has been confirmed and is being prepared for immediate delivery.'}
                 </p>
                 <div style="background: var(--tdb-cream-light); border: 1px dashed var(--tdb-border); border-radius: var(--radius-sm); padding: 1rem; margin-bottom: 1.75rem;">
                   <div style="font-size: 0.82rem; color: var(--tdb-text-muted);">
