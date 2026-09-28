@@ -22,8 +22,8 @@ const TRANSLATIONS = {
     
     // Hero (Requirement 3: 2-Category Focus)
     heroBadge: "DIRECT DISTRIBUTOR • WHOLESALE MVP",
-    heroHeadline: "Wholesale Beverages & Premium Chocolates Delivered Direct.",
-    heroSubheadline: "Save big on energy drink cartons and premium chocolate packs sourced directly from authorized brand distributors.",
+    heroHeadline: "Top Grocery Brands & Premium Packaged Goods at Direct Wholesale Prices.",
+    heroSubheadline: "Direct-from-distributor pricing on premium food brands, beverages, and packaged goods, sourced directly from official brand channels.",
     heroShopBeverages: "Shop Beverages",
     heroShopChocolates: "Shop Chocolates",
     ratingStat: "4.9 / 5 Rating",
@@ -151,8 +151,8 @@ const TRANSLATIONS = {
     
     // Hero (Requirement 3: 2-Category Focus)
     heroBadge: "موزع معتمد • متجر الجملة المباشر",
-    heroHeadline: "مشروبات الطاقة والشوكولاتة الفاخرة بأسعار الجملة، حتى باب بيتك.",
-    heroSubheadline: "وفر حتى ٣٠٪ على كراتين الريد بُل وألواح الشوكولاتة الفاخرة مباشرة من الوكلاء والموزعين الرسميين.",
+    heroHeadline: "كبار العلامات التجارية والسلع الغذائية.. بسعر الجملة المباشر.",
+    heroSubheadline: "تأمين احتياجاتك من أجود المنتجات الغذائية والمشروبات بأسعار المصنع، مباشرةً من الوكلاء والموزعين المعتمدين.",
     heroShopBeverages: "تسوق المشروبات",
     heroShopChocolates: "تسوق الشوكولاتة",
     ratingStat: "تقييم ٤.٩ / ٥",
