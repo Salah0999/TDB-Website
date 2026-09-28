@@ -18,13 +18,13 @@ function renderHeader(lang = 'en') {
           </div>
         </a>
 
-        <!-- Center: Streamlined 4-Link Navigation (Requirement 2) -->
+        <!-- Center: Streamlined 4-Link Navigation (Requirement 1) -->
         <nav aria-label="Main Navigation">
           <ul class="nav-links">
             <li><a href="#home" class="nav-link active" data-i18n="navHome">${isAr ? 'الرئيسية' : 'Home'}</a></li>
             <li><a href="#catalog" class="nav-link" data-nav-category="beverages" data-i18n="navBeverages">${isAr ? 'المشروبات' : 'Beverages'}</a></li>
             <li><a href="#catalog" class="nav-link" data-nav-category="chocolates" data-i18n="navChocolates">${isAr ? 'الشوكولاتة' : 'Chocolates'}</a></li>
-            <li><a href="javascript:void(0)" class="nav-link cart-link" id="navCartLink" data-i18n="navCart">${isAr ? 'السلة' : 'Cart'}</a></li>
+            <li><a href="javascript:void(0)" class="nav-link about-link" id="navAboutLink" data-i18n="navAbout">${isAr ? 'عن TDB' : 'About Us'}</a></li>
           </ul>
         </nav>
 
@@ -85,7 +85,7 @@ function renderHeader(lang = 'en') {
         <li><a href="#home" class="mobile-drawer-link" data-i18n="navHome" onclick="document.getElementById('mobileDrawerNav').classList.remove('active')">${isAr ? 'الرئيسية' : 'Home'}</a></li>
         <li><a href="#catalog" class="mobile-drawer-link" data-nav-category="beverages" data-i18n="navBeverages" onclick="document.getElementById('mobileDrawerNav').classList.remove('active')">${isAr ? 'المشروبات' : 'Beverages'}</a></li>
         <li><a href="#catalog" class="mobile-drawer-link" data-nav-category="chocolates" data-i18n="navChocolates" onclick="document.getElementById('mobileDrawerNav').classList.remove('active')">${isAr ? 'الشوكولاتة' : 'Chocolates'}</a></li>
-        <li><a href="javascript:void(0)" class="mobile-drawer-link" id="mobileNavCartLink" data-i18n="navCart">${isAr ? 'السلة' : 'Cart'}</a></li>
+        <li><a href="javascript:void(0)" class="mobile-drawer-link" id="mobileNavAboutLink" data-i18n="navAbout" onclick="document.getElementById('mobileDrawerNav').classList.remove('active')">${isAr ? 'عن TDB' : 'About Us'}</a></li>
       </ul>
     </aside>
   `;

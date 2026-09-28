@@ -51,7 +51,13 @@
       checkoutMount.innerHTML = window.renderCheckoutModal(state.lang);
     }
 
-    // 6. Mount Footer
+    // 6. Mount About Us Modal
+    const aboutMount = document.getElementById('aboutModalMount');
+    if (aboutMount && typeof window.renderAboutModal === 'function') {
+      aboutMount.innerHTML = window.renderAboutModal(state.lang);
+    }
+
+    // 7. Mount Footer
     const footerMount = document.getElementById('footerMount');
     if (footerMount && typeof window.renderFooter === 'function') {
       footerMount.innerHTML = window.renderFooter(state.lang);
@@ -131,12 +137,30 @@
 
     // Cart Drawer Open Triggers
     document.addEventListener('click', (e) => {
-      const trigger = e.target.closest('#cartTriggerBtn, #navCartLink, #footerCartLink, #mobileNavCartLink');
+      const trigger = e.target.closest('#cartTriggerBtn, #footerCartLink');
       if (trigger) {
         e.preventDefault();
         const mobileDrawer = document.getElementById('mobileDrawerNav');
         if (mobileDrawer) mobileDrawer.classList.remove('active');
         openCartDrawer();
+      }
+    });
+
+    // About Us Modal Triggers
+    document.addEventListener('click', (e) => {
+      const aboutTrigger = e.target.closest('#navAboutLink, #mobileNavAboutLink, .about-modal-trigger');
+      if (aboutTrigger) {
+        e.preventDefault();
+        const mobileDrawer = document.getElementById('mobileDrawerNav');
+        if (mobileDrawer) mobileDrawer.classList.remove('active');
+        openAboutModal();
+      }
+      if (e.target.closest('#aboutModalClose')) {
+        closeAboutModal();
+      }
+      const aboutModal = document.getElementById('aboutModal');
+      if (aboutModal && e.target === aboutModal) {
+        closeAboutModal();
       }
     });
 
@@ -553,6 +577,25 @@
   }
 
   /* ==========================================================================
+     ABOUT US MODAL
+     ========================================================================== */
+  function openAboutModal() {
+    const modal = document.getElementById('aboutModal');
+    if (modal) {
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeAboutModal() {
+    const modal = document.getElementById('aboutModal');
+    if (modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+
+  /* ==========================================================================
      CHECKOUT MODAL (Requirement 5)
      ========================================================================== */
   function openCheckoutModal() {
@@ -652,6 +695,10 @@
     removeFromCart,
     openQuickView,
     closeQuickViewModal,
+    openAboutModal,
+    closeAboutModal,
+    openCheckoutModal,
+    closeCheckoutModal,
     setLanguage,
     openCartDrawer,
     closeCartDrawer,
