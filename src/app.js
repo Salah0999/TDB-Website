@@ -34,6 +34,8 @@
     const headerMount = document.getElementById('headerMount');
     if (headerMount && typeof window.renderHeader === 'function') {
       headerMount.innerHTML = window.renderHeader(state.lang);
+      // Boot the new TDB header's own event logic (burger, lang toggle, cart sheet, signup)
+      if (typeof window.initHeader === 'function') window.initHeader();
     }
 
     // 2. Mount Category Spotlight
@@ -114,9 +116,9 @@
      EVENT BINDINGS
      ========================================================================== */
   function bindEvents() {
-    // Header Scroll Shadow
+    // Header Scroll Shadow — covers both old .site-header and new .tdb-header
     window.addEventListener('scroll', () => {
-      const header = document.querySelector('.site-header');
+      const header = document.querySelector('.site-header, .tdb-header');
       if (header) {
         if (window.scrollY > 20) {
           header.classList.add('scrolled');
@@ -126,7 +128,46 @@
       }
     });
 
-    // Language Toggle
+    // tdb:langchange — fired by the new header's EN/AR toggle.
+    // Sync app state and re-render all components so the whole site updates.
+    document.addEventListener('tdb:langchange', (e) => {
+      const newLang = e.detail && e.detail.lang;
+      if (newLang && newLang !== state.lang) {
+        state.lang = newLang;
+        localStorage.setItem('tdb_lang', newLang);
+        applyLanguage(newLang);
+        // Re-mount all components that depend on lang (catalog, cart, footer…)
+        // but skip the header itself — it re-renders itself via initHeader
+        renderCategorySpotlight();
+        renderCatalog();
+        renderCartDrawerMount();
+        const checkoutMount = document.getElementById('checkoutModalMount');
+        if (checkoutMount && typeof window.renderCheckoutModal === 'function') {
+          checkoutMount.innerHTML = window.renderCheckoutModal(state.lang);
+        }
+        const aboutMount = document.getElementById('aboutModalMount');
+        if (aboutMount && typeof window.renderAboutModal === 'function') {
+          aboutMount.innerHTML = window.renderAboutModal(state.lang);
+        }
+        const footerMount = document.getElementById('footerMount');
+        if (footerMount && typeof window.renderFooter === 'function') {
+          footerMount.innerHTML = window.renderFooter(state.lang);
+        }
+        updateCartUI();
+      }
+    });
+
+    // tdb:cartupdated — fired by window.tdbAddToCart (Header.js) when an item is added.
+    // Keep app.js state.cart in sync with localStorage so the cart drawer reflects reality.
+    document.addEventListener('tdb:cartupdated', () => {
+      try {
+        state.cart = JSON.parse(localStorage.getItem('tdb_cart') || '[]');
+      } catch { state.cart = []; }
+      renderCartDrawerMount();
+      updateCartUI();
+    });
+
+    // Legacy Language Toggle (old #langToggleBtn kept for back-compat, now also calls setLanguage)
     document.addEventListener('click', (e) => {
       const langBtn = e.target.closest('#langToggleBtn');
       if (langBtn) {
@@ -135,13 +176,16 @@
       }
     });
 
-    // Cart Drawer Open Triggers
+    // Cart Drawer Open Triggers — includes new TDB header's #tdbCartBtn
     document.addEventListener('click', (e) => {
-      const trigger = e.target.closest('#cartTriggerBtn, #footerCartLink');
+      const trigger = e.target.closest('#cartTriggerBtn, #footerCartLink, #tdbCartBtn');
       if (trigger) {
         e.preventDefault();
         const mobileDrawer = document.getElementById('mobileDrawerNav');
         if (mobileDrawer) mobileDrawer.classList.remove('active');
+        // Also close the tdb header's own cart sheet if it's open
+        const tdbCartModal = document.getElementById('tdbCartModal');
+        if (tdbCartModal) tdbCartModal.classList.remove('open');
         openCartDrawer();
       }
     });
@@ -480,8 +524,17 @@
 
   function updateCartUI() {
     const totalCount = state.cart.reduce((sum, item) => sum + item.quantity, 0);
+    // Legacy badge (old header)
     const badge = document.getElementById('cartBadge');
     if (badge) badge.textContent = totalCount;
+    // New TDB header badge
+    const tdbBadge = document.getElementById('tdbCartCount');
+    if (tdbBadge) {
+      tdbBadge.textContent = totalCount;
+      tdbBadge.hidden = totalCount === 0;
+    }
+    // Also sync the tdb header's in-memory cart via its own render
+    if (typeof window.tdbRenderCart === 'function') window.tdbRenderCart();
   }
 
   function applyPromoCode() {

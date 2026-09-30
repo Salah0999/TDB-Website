@@ -133,7 +133,7 @@
               24 Slim Cans × 250ml Sealed Carton. Genuine factory packaging with verified batch barcode.
             </p>
 
-            <button class="hero-card-quick-add" onclick="window.tdbApp.addToCart('red-bull-pack')">
+            <button class="hero-card-quick-add" onclick="window.tdbAddToCart('red-bull-pack')">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <line x1="12" y1="5" x2="12" y2="19"></line>
                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -285,6 +285,8 @@
   <div id="footerMount"></div>
 
   <!-- Component Scripts from src/components/ -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="src/services/db.js"></script>
   <script src="js/products.js"></script>
   <script src="js/translations.js"></script>
   <script src="src/components/common/Header.js"></script>
